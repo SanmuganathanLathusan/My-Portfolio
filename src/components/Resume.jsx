@@ -1,0 +1,134 @@
+const experiences = [
+  {
+    type: 'education',
+    title: 'BSc (Hons) Software Engineering',
+    org: 'Sabaragamuwa University of Sri Lanka',
+    period: '2022 – Present',
+    desc: 'Currently in 3rd year. Relevant coursework: Data Structures & Algorithms, Web Development, Database Systems, OOP, Software Architecture.',
+    icon: '🎓',
+  },
+  {
+    type: 'education',
+    title: 'GCE Advanced Level (A/L)',
+    org: 'Maths Stream | 2020',
+    period: '2020',
+    desc: 'Combined Maths, Physics, Chemistry. Qualified for University admissions.',
+    icon: '📚',
+  },
+]
+
+const certifications = [
+  { name: 'Meta Front-End Developer Professional', issuer: 'Coursera / Meta', year: '2024', badge: '🏅' },
+  { name: 'The Complete Node.js Developer Course', issuer: 'Udemy', year: '2023', badge: '🏅' },
+  { name: 'React – The Complete Guide', issuer: 'Udemy', year: '2023', badge: '🏅' },
+  { name: 'SQL & Database Design', issuer: 'LinkedIn Learning', year: '2023', badge: '🏅' },
+]
+
+const highlights = [
+  { icon: '💼', text: 'Open to Full Stack, Backend & Frontend Internships' },
+  { icon: '🌍', text: 'Willing to Work Remotely or On-site in Sri Lanka' },
+  { icon: '📅', text: 'Available from June 2025 for 6-month internships' },
+  { icon: '🚀', text: 'Fast learner with strong teamwork & communication' },
+]
+
+export default function Resume() {
+  return (
+    <section id="resume" className="section-padding">
+      <div className="section-container">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 tag mb-4">Resume</div>
+          <h2 className="section-title">Education & <span className="gradient-text">Experience</span></h2>
+          <p className="section-subtitle max-w-2xl mx-auto">
+            My academic background, certifications, and what I bring to the table.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Left: Education timeline */}
+          <div>
+            <h3 className="text-white font-bold text-xl mb-8 flex items-center gap-3">
+              <span className="w-8 h-8 rounded-lg bg-primary-600/20 border border-primary-600/30 flex items-center justify-center text-primary-400">🎓</span>
+              Education
+            </h3>
+            <div className="relative border-l-2 border-dark-700 pl-8 space-y-8">
+              {experiences.map((exp, i) => (
+                <div key={i} className="relative">
+                  <div className="absolute -left-[2.875rem] top-0 w-7 h-7 rounded-full bg-dark-800 border-2 border-primary-600 flex items-center justify-center text-sm">
+                    {exp.icon}
+                  </div>
+                  <div className="card">
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <h4 className="text-white font-semibold">{exp.title}</h4>
+                      <span className="tag whitespace-nowrap flex-shrink-0">{exp.period}</span>
+                    </div>
+                    <p className="text-primary-400 text-sm font-medium mb-2">{exp.org}</p>
+                    <p className="text-dark-300 text-sm">{exp.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: Certifications + highlights */}
+          <div className="space-y-10">
+            {/* Certifications */}
+            <div>
+              <h3 className="text-white font-bold text-xl mb-8 flex items-center gap-3">
+                <span className="w-8 h-8 rounded-lg bg-primary-600/20 border border-primary-600/30 flex items-center justify-center text-primary-400">🏅</span>
+                Certifications
+              </h3>
+              <div className="space-y-3">
+                {certifications.map(cert => (
+                  <div key={cert.name} className="flex items-center gap-4 bg-dark-800 border border-dark-700 rounded-xl p-4 hover:border-primary-600/40 transition-colors">
+                    <span className="text-2xl">{cert.badge}</span>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-white text-sm font-medium truncate">{cert.name}</p>
+                      <p className="text-dark-400 text-xs">{cert.issuer} · {cert.year}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Highlights */}
+            <div>
+              <h3 className="text-white font-bold text-xl mb-6 flex items-center gap-3">
+                <span className="w-8 h-8 rounded-lg bg-primary-600/20 border border-primary-600/30 flex items-center justify-center text-primary-400">✨</span>
+                Why Hire Me?
+              </h3>
+              <div className="space-y-3">
+                {highlights.map(h => (
+                  <div key={h.text} className="flex items-center gap-3 text-dark-300 text-sm">
+                    <span className="text-xl flex-shrink-0">{h.icon}</span>
+                    {h.text}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Download CV CTA */}
+        <div className="mt-16 text-center">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-dark-800 border border-dark-700 rounded-2xl p-8">
+            <div className="text-left">
+              <h3 className="text-white font-bold text-xl mb-1">Download My CV</h3>
+              <p className="text-dark-400 text-sm">Get the full picture — education, skills, projects, and references.</p>
+            </div>
+            <a
+              href="/Lathusan_CV.pdf"
+              download
+              className="btn-primary whitespace-nowrap flex-shrink-0"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              Download CV
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
