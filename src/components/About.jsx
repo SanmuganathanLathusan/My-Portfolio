@@ -57,8 +57,18 @@ export default function About() {
                   {'  '}
                   <span className="text-blue-400">seeking</span>
                   <span className="text-white">: </span>
-                  <span className="text-green-400">"Internship"</span>
+                  <span className="text-green-400">"SE & Full Stack Internship"</span>
                   <span className="text-white">,</span>
+                  {'\n'}
+                  {'  '}
+                  <span className="text-blue-400">languages</span>
+                  <span className="text-white">: [</span>
+                  <span className="text-green-400">"Python"</span>
+                  <span className="text-white">, </span>
+                  <span className="text-green-400">"Java"</span>
+                  <span className="text-white">, </span>
+                  <span className="text-green-400">"C"</span>
+                  <span className="text-white">],</span>
                   {'\n'}
                   {'  '}
                   <span className="text-blue-400">passions</span>
@@ -97,16 +107,15 @@ export default function About() {
               Passionate Developer &amp;{' '}
               <span className="gradient-text">Problem Solver</span>
             </h2>
-            <p className="text-dark-300 leading-relaxed mb-6">
-              I'm a 3rd-year <strong className="text-white">Software Engineering undergraduate</strong> at
+            <p className="text-dark-600 dark:text-dark-300 leading-relaxed mb-6 transition-colors duration-300">
+              I'm a 3rd-year <strong className="text-dark-900 dark:text-white">Software Engineering undergraduate</strong> at
               Sabaragamuwa University of Sri Lanka. I'm deeply passionate about building web applications
               that make a difference — from clean frontends to robust backends.
             </p>
-            <p className="text-dark-300 leading-relaxed mb-8">
-              With hands-on experience in <strong className="text-primary-400">React, Node.js, Express</strong> and
-              databases like MongoDB and MySQL, I thrive in collaborative environments and love tackling
-              complex challenges with elegant, efficient solutions. I'm actively seeking internship
-              opportunities to gain industry exposure and contribute to meaningful projects.
+            <p className="text-dark-600 dark:text-dark-300 leading-relaxed mb-8 transition-colors duration-300">
+              With hands-on experience in <strong className="text-primary-600 dark:text-primary-400">React, Node.js, Express</strong>, programming languages like <strong className="text-primary-600 dark:text-primary-400">Python, Java, and C</strong>, and databases like MongoDB and MySQL, I thrive in collaborative environments and love tackling
+              complex challenges with elegant, efficient solutions. I'm actively seeking <strong className="text-dark-900 dark:text-white">Software Engineering</strong> and <strong className="text-dark-900 dark:text-white">Full Stack Development</strong> internship opportunities
+              to gain industry exposure and contribute to meaningful projects.
             </p>
 
             {/* Info grid */}
@@ -117,12 +126,12 @@ export default function About() {
                 { icon: '📧', label: 'Email', value: 'lathusanlathusan40@example.com' },
                 { icon: '🎯', label: 'Goal', value: 'Full Stack / Software Engineering Internship' },
               ].map(item => (
-                <div key={item.label} className="bg-dark-800 border border-dark-700 rounded-xl p-4">
+                <div key={item.label} className="bg-gray-50 border border-gray-200 dark:bg-dark-800 dark:border-dark-700 rounded-xl p-4 transition-colors duration-300">
                   <div className="flex items-center gap-2 mb-1">
                     <span>{item.icon}</span>
-                    <span className="text-dark-400 text-xs uppercase tracking-wider">{item.label}</span>
+                    <span className="text-dark-500 dark:text-dark-400 text-xs uppercase tracking-wider transition-colors">{item.label}</span>
                   </div>
-                  <p className="text-white text-sm font-medium">{item.value}</p>
+                  <p className="text-dark-900 dark:text-white text-sm font-medium transition-colors">{item.value}</p>
                 </div>
               ))}
             </div>
@@ -136,9 +145,9 @@ export default function About() {
         {/* Stats row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
           {stats.map(stat => (
-            <div key={stat.label} className="card text-center">
+            <div key={stat.label} className="card text-center transition-colors duration-300">
               <div className="text-3xl font-extrabold gradient-text mb-1">{stat.value}</div>
-              <div className="text-dark-400 text-sm">{stat.label}</div>
+              <div className="text-dark-600 dark:text-dark-400 text-sm transition-colors">{stat.label}</div>
             </div>
           ))}
         </div>

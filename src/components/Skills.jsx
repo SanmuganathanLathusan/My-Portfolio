@@ -37,6 +37,19 @@ const skillCategories = [
       { name: 'Postman', level: 82 },
       { name: 'Figma', level: 60 },
     ]
+  },
+  {
+    title: 'Languages',
+    icon: '💻',
+    color: 'from-orange-500 to-yellow-500',
+    skills: [
+      { name: 'Python', level: 85 },
+      { name: 'Java', level: 80 },
+      { name: 'C', level: 75 },
+      { name: 'JavaScript', level: 88 },
+      { name: 'TypeScript', level: 65 },
+      { name: 'SQL', level: 80 },
+    ]
   }
 ]
 
@@ -51,10 +64,10 @@ function SkillBar({ name, level }) {
   return (
     <div className="mb-4">
       <div className="flex justify-between mb-1">
-        <span className="text-dark-200 text-sm font-medium">{name}</span>
-        <span className="text-dark-400 text-sm">{level}%</span>
+        <span className="text-dark-700 dark:text-dark-200 text-sm font-medium transition-colors">{name}</span>       
+        <span className="text-dark-500 dark:text-dark-400 text-sm transition-colors">{level}%</span>
       </div>
-      <div className="h-2 bg-dark-700 rounded-full overflow-hidden">
+      <div className="h-2 bg-gray-200 dark:bg-dark-700 rounded-full overflow-hidden transition-colors">
         <div
           className="h-full bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full transition-all duration-1000"
           style={{ width: `${level}%` }}
@@ -78,13 +91,13 @@ export default function Skills() {
         </div>
 
         {/* Skill categories */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {skillCategories.map(cat => (
             <div key={cat.title} className="card">
               <div className={`w-10 h-10 rounded-xl bg-gradient-to-r ${cat.color} flex items-center justify-center text-xl mb-4`}>
                 {cat.icon}
               </div>
-              <h3 className="text-white font-bold text-lg mb-6">{cat.title}</h3>
+              <h3 className="text-dark-900 dark:text-white font-bold text-lg mb-6 transition-colors">{cat.title}</h3>
               {cat.skills.map(skill => (
                 <SkillBar key={skill.name} {...skill} />
               ))}

@@ -78,8 +78,8 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left: Info */}
           <div>
-            <h3 className="text-white font-bold text-xl mb-2">Let's work together</h3>
-            <p className="text-dark-300 mb-8 leading-relaxed">
+            <h3 className="text-dark-900 dark:text-white font-bold text-xl mb-2 transition-colors">Let's work together</h3>
+            <p className="text-dark-600 dark:text-dark-300 mb-8 leading-relaxed transition-colors">
               I'm currently open to internship positions in Full Stack Development and Software Engineering.
               Whether it's a quick question or an exciting opportunity, feel free to reach out!
             </p>
@@ -87,18 +87,18 @@ export default function Contact() {
             <div className="space-y-4 mb-8">
               {contactInfo.map(item => (
                 <div key={item.label} className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-primary-900/40 border border-primary-800/50 flex items-center justify-center text-primary-400 flex-shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-primary-900/40 border border-primary-800/50 flex items-center justify-center text-primary-600 dark:text-primary-400 flex-shrink-0 transition-colors">
                     {item.icon}
                   </div>
                   <div>
-                    <p className="text-dark-400 text-xs uppercase tracking-wider mb-0.5">{item.label}</p>
+                    <p className="text-dark-500 dark:text-dark-400 text-xs uppercase tracking-wider mb-0.5 transition-colors">{item.label}</p>
                     {item.href ? (
                       <a href={item.href} target="_blank" rel="noopener noreferrer"
-                        className="text-white text-sm hover:text-primary-400 transition-colors">
+                        className="text-dark-900 dark:text-white text-sm hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                         {item.value}
                       </a>
                     ) : (
-                      <p className="text-white text-sm">{item.value}</p>
+                      <p className="text-dark-900 dark:text-white text-sm transition-colors">{item.value}</p>
                     )}
                   </div>
                 </div>
@@ -117,7 +117,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="name" className="block text-dark-300 text-sm mb-1.5">Full Name *</label>
+                  <label htmlFor="name" className="block text-dark-600 dark:text-dark-300 text-sm mb-1.5 transition-colors">Full Name *</label>
                   <input
                     id="name"
                     name="name"
@@ -126,12 +126,12 @@ export default function Contact() {
                     value={form.name}
                     onChange={handleChange}
                     placeholder="John Smith"
-                    className="w-full bg-dark-700 border border-dark-600 rounded-xl px-4 py-3 text-white text-sm placeholder-dark-500
+                    className="w-full bg-gray-100 dark:bg-dark-700 border border-gray-200 dark:border-dark-600 rounded-xl px-4 py-3 text-dark-900 dark:text-white text-sm placeholder-gray-500 dark:placeholder-dark-500
                                focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-dark-300 text-sm mb-1.5">Email Address *</label>
+                  <label htmlFor="email" className="block text-dark-600 dark:text-dark-300 text-sm mb-1.5 transition-colors">Email Address *</label>
                   <input
                     id="email"
                     name="email"
@@ -140,14 +140,14 @@ export default function Contact() {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="john@company.com"
-                    className="w-full bg-dark-700 border border-dark-600 rounded-xl px-4 py-3 text-white text-sm placeholder-dark-500
+                    className="w-full bg-gray-100 dark:bg-dark-700 border border-gray-200 dark:border-dark-600 rounded-xl px-4 py-3 text-dark-900 dark:text-white text-sm placeholder-gray-500 dark:placeholder-dark-500
                                focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-dark-300 text-sm mb-1.5">Subject</label>
+                <label htmlFor="subject" className="block text-dark-600 dark:text-dark-300 text-sm mb-1.5 transition-colors">Subject</label>
                 <input
                   id="subject"
                   name="subject"
@@ -155,13 +155,13 @@ export default function Contact() {
                   value={form.subject}
                   onChange={handleChange}
                   placeholder="Internship Opportunity at XYZ Company"
-                  className="w-full bg-dark-700 border border-dark-600 rounded-xl px-4 py-3 text-white text-sm placeholder-dark-500
+                  className="w-full bg-gray-100 dark:bg-dark-700 border border-gray-200 dark:border-dark-600 rounded-xl px-4 py-3 text-dark-900 dark:text-white text-sm placeholder-gray-500 dark:placeholder-dark-500
                              focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-dark-300 text-sm mb-1.5">Message *</label>
+                <label htmlFor="message" className="block text-dark-600 dark:text-dark-300 text-sm mb-1.5 transition-colors">Message *</label>
                 <textarea
                   id="message"
                   name="message"
@@ -170,7 +170,7 @@ export default function Contact() {
                   value={form.message}
                   onChange={handleChange}
                   placeholder="Tell me about the opportunity or how I can help..."
-                  className="w-full bg-dark-700 border border-dark-600 rounded-xl px-4 py-3 text-white text-sm placeholder-dark-500
+                  className="w-full bg-gray-100 dark:bg-dark-700 border border-gray-200 dark:border-dark-600 rounded-xl px-4 py-3 text-dark-900 dark:text-white text-sm placeholder-gray-500 dark:placeholder-dark-500
                              focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors resize-none"
                 />
               </div>

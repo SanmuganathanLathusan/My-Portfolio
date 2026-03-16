@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import profileImg from '../assets/image.svg'
+import profileImg from '../assets/image1.png'
 
 const roles = [
   'Full Stack Developer',
@@ -62,21 +62,21 @@ export default function Hero() {
             </div>
 
             {/* Name */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-dark-900 dark:text-white leading-tight mb-4 transition-colors duration-300">
               Hi, I'm <br />
               <span className="gradient-text">Lathusan</span>
             </h1>
 
             {/* Typewriter */}
-            <div className="text-xl sm:text-2xl font-semibold text-dark-200 mb-6 h-8">
+            <div className="text-xl sm:text-2xl font-semibold text-dark-600 dark:text-dark-200 mb-6 h-8 transition-colors duration-300">
               <TypewriterText texts={roles} />
             </div>
 
             {/* Description */}
-            <p className="text-dark-300 text-lg leading-relaxed max-w-xl mb-8">
-              A passionate <strong className="text-white">Software Engineering undergraduate</strong> at{' '}
-              <strong className="text-primary-400">Sabaragamuwa University of Sri Lanka</strong>, building
-              scalable full-stack applications and seeking internship opportunities to grow my skills
+            <p className="text-dark-600 dark:text-dark-300 text-lg leading-relaxed max-w-xl mb-8 transition-colors duration-300">
+              A passionate <strong className="text-dark-900 dark:text-white">Software Engineering undergraduate</strong> at{' '}
+              <strong className="text-primary-600 dark:text-primary-400">Sabaragamuwa University of Sri Lanka</strong>, building
+              scalable applications and actively seeking <strong className="text-dark-900 dark:text-white">Software Engineering</strong> and <strong className="text-dark-900 dark:text-white">Full Stack Dev</strong> internship opportunities to grow my skills
               in real-world projects.
             </p>
 
@@ -146,26 +146,26 @@ export default function Hero() {
             <div className="relative w-64 h-64 md:w-80 md:h-80">
               {/* Outer glow ring */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-500 to-cyan-500 p-1 glow">
-                <div className="w-full h-full rounded-full bg-dark-800 flex items-center justify-center overflow-hidden">
-                  <img src={profileImg} alt="Lathusan" className="w-full h-full object-cover" />
+                <div className="w-full h-full rounded-full bg-white dark:bg-dark-800 flex items-center justify-center overflow-hidden transition-colors">
+                  <img src={profileImg} alt="Lathusan" className="w-full h-full object-cover scale-110" />
                 </div>
               </div>
 
               {/* Floating badge - University */}
-              <div className="absolute -bottom-4 -left-4 bg-dark-800 border border-dark-600 rounded-xl px-3 py-2 flex items-center gap-2 shadow-xl">
+              <div className="absolute -bottom-4 -left-4 bg-gray-50 border border-gray-200 dark:bg-dark-800 dark:border-dark-600 rounded-xl px-3 py-2 flex items-center gap-2 shadow-xl transition-colors">
                 <span className="text-xl">🎓</span>
                 <div>
-                  <div className="text-white text-xs font-semibold">SUSL</div>
-                  <div className="text-dark-400 text-xs">SE Undergrad</div>
+                  <div className="text-dark-900 dark:text-white text-xs font-semibold transition-colors">SUSL</div>
+                  <div className="text-dark-500 dark:text-dark-400 text-xs transition-colors">SE Undergrad</div>
                 </div>
               </div>
 
               {/* Floating badge - Exp */}
-              <div className="absolute -top-4 -right-4 bg-dark-800 border border-dark-600 rounded-xl px-3 py-2 flex items-center gap-2 shadow-xl">
+              <div className="absolute -top-4 -right-4 bg-gray-50 border border-gray-200 dark:bg-dark-800 dark:border-dark-600 rounded-xl px-3 py-2 flex items-center gap-2 shadow-xl transition-colors">
                 <span className="text-xl">💻</span>
                 <div>
-                  <div className="text-white text-xs font-semibold">2+ Years</div>
-                  <div className="text-dark-400 text-xs">Coding</div>
+                  <div className="text-dark-900 dark:text-white text-xs font-semibold transition-colors">2+ Years</div>
+                  <div className="text-dark-500 dark:text-dark-400 text-xs transition-colors">Coding</div>
                 </div>
               </div>
             </div>
@@ -173,10 +173,10 @@ export default function Hero() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-dark-500 text-xs">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-dark-500 text-xs transition-colors">
           <span>Scroll down</span>
-          <div className="w-5 h-8 border-2 border-dark-600 rounded-full flex justify-center pt-1">
-            <div className="w-1 h-2 bg-primary-500 rounded-full animate-bounce" />
+          <div className="w-5 h-8 border-2 border-dark-300 dark:border-dark-600 rounded-full flex justify-center pt-1 transition-colors">
+            <div className="w-1 h-2 bg-primary-600 dark:bg-primary-500 rounded-full animate-bounce" />
           </div>
         </div>
       </div>

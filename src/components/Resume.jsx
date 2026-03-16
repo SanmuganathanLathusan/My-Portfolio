@@ -47,23 +47,23 @@ export default function Resume() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left: Education timeline */}
           <div>
-            <h3 className="text-white font-bold text-xl mb-8 flex items-center gap-3">
-              <span className="w-8 h-8 rounded-lg bg-primary-600/20 border border-primary-600/30 flex items-center justify-center text-primary-400">🎓</span>
+            <h3 className="text-dark-900 dark:text-white font-bold text-xl mb-8 flex items-center gap-3 transition-colors">
+              <span className="w-8 h-8 rounded-lg bg-primary-600/20 border border-primary-600/30 flex items-center justify-center text-primary-600 dark:text-primary-400">🎓</span>
               Education
             </h3>
-            <div className="relative border-l-2 border-dark-700 pl-8 space-y-8">
+            <div className="relative border-l-2 border-gray-200 dark:border-dark-700 pl-8 space-y-8 transition-colors">
               {experiences.map((exp, i) => (
                 <div key={i} className="relative">
-                  <div className="absolute -left-[2.875rem] top-0 w-7 h-7 rounded-full bg-dark-800 border-2 border-primary-600 flex items-center justify-center text-sm">
+                  <div className="absolute -left-[2.875rem] top-0 w-7 h-7 rounded-full bg-white dark:bg-dark-800 border-2 border-primary-600 flex items-center justify-center text-sm transition-colors">
                     {exp.icon}
                   </div>
                   <div className="card">
                     <div className="flex items-start justify-between gap-2 mb-2">
-                      <h4 className="text-white font-semibold">{exp.title}</h4>
+                      <h4 className="text-dark-900 dark:text-white font-semibold transition-colors">{exp.title}</h4>
                       <span className="tag whitespace-nowrap flex-shrink-0">{exp.period}</span>
                     </div>
-                    <p className="text-primary-400 text-sm font-medium mb-2">{exp.org}</p>
-                    <p className="text-dark-300 text-sm">{exp.desc}</p>
+                    <p className="text-primary-600 dark:text-primary-400 text-sm font-medium mb-2 transition-colors">{exp.org}</p>
+                    <p className="text-dark-600 dark:text-dark-300 text-sm transition-colors">{exp.desc}</p>
                   </div>
                 </div>
               ))}
@@ -74,17 +74,17 @@ export default function Resume() {
           <div className="space-y-10">
             {/* Certifications */}
             <div>
-              <h3 className="text-white font-bold text-xl mb-8 flex items-center gap-3">
-                <span className="w-8 h-8 rounded-lg bg-primary-600/20 border border-primary-600/30 flex items-center justify-center text-primary-400">🏅</span>
+              <h3 className="text-dark-900 dark:text-white font-bold text-xl mb-8 flex items-center gap-3 transition-colors">
+                <span className="w-8 h-8 rounded-lg bg-primary-600/20 border border-primary-600/30 flex items-center justify-center text-primary-600 dark:text-primary-400">🏅</span>
                 Certifications
               </h3>
               <div className="space-y-3">
                 {certifications.map(cert => (
-                  <div key={cert.name} className="flex items-center gap-4 bg-dark-800 border border-dark-700 rounded-xl p-4 hover:border-primary-600/40 transition-colors">
+                  <div key={cert.name} className="flex items-center gap-4 bg-gray-50 border border-gray-200 dark:bg-dark-800 dark:border-dark-700 rounded-xl p-4 hover:border-primary-500/40 dark:hover:border-primary-600/40 transition-colors duration-300">
                     <span className="text-2xl">{cert.badge}</span>
                     <div className="flex-1 min-w-0">
-                      <p className="text-white text-sm font-medium truncate">{cert.name}</p>
-                      <p className="text-dark-400 text-xs">{cert.issuer} · {cert.year}</p>
+                      <p className="text-dark-900 dark:text-white text-sm font-medium truncate transition-colors">{cert.name}</p>
+                      <p className="text-dark-500 dark:text-dark-400 text-xs transition-colors">{cert.issuer} · {cert.year}</p>
                     </div>
                   </div>
                 ))}
@@ -93,13 +93,13 @@ export default function Resume() {
 
             {/* Highlights */}
             <div>
-              <h3 className="text-white font-bold text-xl mb-6 flex items-center gap-3">
-                <span className="w-8 h-8 rounded-lg bg-primary-600/20 border border-primary-600/30 flex items-center justify-center text-primary-400">✨</span>
+              <h3 className="text-dark-900 dark:text-white font-bold text-xl mb-6 flex items-center gap-3 transition-colors">
+                <span className="w-8 h-8 rounded-lg bg-primary-600/20 border border-primary-600/30 flex items-center justify-center text-primary-600 dark:text-primary-400">✨</span>
                 Why Hire Me?
               </h3>
               <div className="space-y-3">
                 {highlights.map(h => (
-                  <div key={h.text} className="flex items-center gap-3 text-dark-300 text-sm">
+                  <div key={h.text} className="flex items-center gap-3 text-dark-600 dark:text-dark-300 text-sm transition-colors">
                     <span className="text-xl flex-shrink-0">{h.icon}</span>
                     {h.text}
                   </div>
@@ -111,10 +111,10 @@ export default function Resume() {
 
         {/* Download CV CTA */}
         <div className="mt-16 text-center">
-          <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-dark-800 border border-dark-700 rounded-2xl p-8">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-gray-50 border border-gray-200 dark:bg-dark-800 dark:border-dark-700 rounded-2xl p-8 transition-colors duration-300">
             <div className="text-left">
-              <h3 className="text-white font-bold text-xl mb-1">Download My CV</h3>
-              <p className="text-dark-400 text-sm">Get the full picture — education, skills, projects, and references.</p>
+              <h3 className="text-dark-900 dark:text-white font-bold text-xl mb-1 transition-colors">{`Download My CV`}</h3>
+              <p className="text-dark-600 dark:text-dark-400 text-sm transition-colors">Get the full picture — education, skills, projects, and references.</p>
             </div>
             <a
               href="/Lathusan_CV.pdf"

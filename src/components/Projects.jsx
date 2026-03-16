@@ -100,14 +100,14 @@ function ProjectCard({ project }) {
           {project.emoji}
         </div>
         <div>
-          <h3 className="text-white font-bold text-lg group-hover:text-primary-400 transition-colors">
+          <h3 className="text-dark-900 dark:text-white font-bold text-lg group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
             {project.title}
           </h3>
         </div>
       </div>
 
       {/* Description */}
-      <p className="text-dark-300 text-sm leading-relaxed mb-5 flex-1">
+      <p className="text-dark-600 dark:text-dark-300 text-sm leading-relaxed mb-5 flex-1 transition-colors">
         {project.description}
       </p>
 
@@ -124,19 +124,19 @@ function ProjectCard({ project }) {
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-dark-300 hover:text-white text-sm font-medium transition-colors"
+          className="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white text-sm font-medium transition-colors"
         >
           <GitHubIcon />
           Code
         </a>
         {project.live && (
           <>
-            <span className="text-dark-700">|</span>
+            <span className="text-gray-300 dark:text-dark-700">|</span>
             <a
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-dark-300 hover:text-primary-400 text-sm font-medium transition-colors"
+              className="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 text-sm font-medium transition-colors"
             >
               <ExternalLinkIcon />
               Live Demo

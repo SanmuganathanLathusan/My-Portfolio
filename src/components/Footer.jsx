@@ -44,7 +44,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-dark-900 border-t border-dark-800">
+    <footer className="bg-gray-50 border-t border-gray-200 dark:bg-dark-900 dark:border-dark-800 transition-colors duration-300">
       <div className="section-container py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
 
@@ -52,9 +52,9 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <div className="text-2xl font-bold mb-1">
               <span className="gradient-text">LA</span>
-              <span className="text-dark-400 font-mono text-sm ml-1">.dev</span>
+              <span className="text-dark-600 dark:text-dark-400 font-mono text-sm ml-1 transition-colors">.dev</span>
             </div>
-            <p className="text-dark-400 text-sm max-w-xs">
+            <p className="text-dark-500 dark:text-dark-400 text-sm max-w-xs transition-colors">
               Software Engineering Undergraduate · SUSL · Seeking Internships
             </p>
           </div>
@@ -67,7 +67,7 @@ export default function Footer() {
                   <a
                     href={link.href}
                     onClick={e => handleNavClick(e, link.href)}
-                    className="text-dark-400 hover:text-white text-sm transition-colors"
+                    className="text-dark-600 hover:text-dark-900 dark:text-dark-400 dark:hover:text-white text-sm transition-colors"
                   >
                     {link.label}
                   </a>
@@ -85,8 +85,8 @@ export default function Footer() {
                 target={s.href.startsWith('mailto') ? undefined : '_blank'}
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="w-9 h-9 rounded-lg bg-dark-800 border border-dark-700 flex items-center justify-center
-                           text-dark-400 hover:text-primary-400 hover:border-primary-600/50 transition-all duration-200"
+                className="w-9 h-9 rounded-lg bg-gray-100 border border-gray-200 dark:bg-dark-800 dark:border-dark-700 flex items-center justify-center
+                           text-dark-600 hover:text-primary-600 dark:text-dark-400 dark:hover:text-primary-400 hover:border-primary-500/50 transition-all duration-200"
               >
                 {s.icon}
               </a>
@@ -95,12 +95,12 @@ export default function Footer() {
         </div>
 
         {/* Divider + copyright */}
-        <div className="border-t border-dark-800 mt-8 pt-8 text-center">
+        <div className="border-t border-gray-200 dark:border-dark-800 mt-8 pt-8 text-center transition-colors">
           <p className="text-dark-500 text-sm">
             © {new Date().getFullYear()} Lathusan. Built with{' '}
-            <span className="text-primary-400">React</span>,{' '}
-            <span className="text-primary-400">Vite</span> &amp;{' '}
-            <span className="text-primary-400">Tailwind CSS</span>.
+            <span className="text-primary-600 dark:text-primary-400 font-medium">React</span>,{' '}
+            <span className="text-primary-600 dark:text-primary-400 font-medium">Vite</span> &amp;{' '}
+            <span className="text-primary-600 dark:text-primary-400 font-medium">Tailwind CSS</span>.
           </p>
         </div>
       </div>

@@ -10,16 +10,38 @@ import Footer from './components/Footer'
 
 function App() {
   const [scrolled, setScrolled] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(true)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
+
+    // Check saved theme
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme === 'light') {
+      setIsDarkMode(false)
+    }
+
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('theme', 'dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('theme', 'light')
+    }
+  }, [isDarkMode])
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode)
+  }
+
   return (
-    <div className="min-h-screen bg-dark-900">
-      <Navbar scrolled={scrolled} />
+    <div className="min-h-screen bg-white dark:bg-dark-900 transition-colors duration-300">
+      <Navbar scrolled={scrolled} isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <main>
         <Hero />
         <About />
