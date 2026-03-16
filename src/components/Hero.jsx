@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import profileImg from '../assets/image.svg'
 
 const roles = [
   'Full Stack Developer',
@@ -145,13 +146,8 @@ export default function Hero() {
             <div className="relative w-64 h-64 md:w-80 md:h-80">
               {/* Outer glow ring */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-500 to-cyan-500 p-1 glow">
-                <div className="w-full h-full rounded-full bg-dark-800 flex items-center justify-center">
-                  {/* Avatar initials */}
-                  <div className="text-center">
-                    <div className="text-7xl font-black gradient-text">L</div>
-                    
-                    <div className="text-dark-400 text-sm mt-1 font-mono">@lathusan</div>
-                  </div>
+                <div className="w-full h-full rounded-full bg-dark-800 flex items-center justify-center overflow-hidden">
+                  <img src={profileImg} alt="Lathusan" className="w-full h-full object-cover" />
                 </div>
               </div>
 
