@@ -8,8 +8,8 @@ const contactInfo = [
       </svg>
     ),
     label: 'Email',
-    value: 'lathusanlathusan40@email.com',
-    href: 'mailto:lathusanlathusan40@email.com',
+    value: 'lathusanlathusan40@gmail.com',
+    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=lathusanlathusan40@gmail.com&su=Hello%20Lathusan',
   },
   {
     icon: (
@@ -50,13 +50,38 @@ export default function Contact() {
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
-    // Simulate form send (replace with actual service like EmailJS or Formspree)
-    if (form.name && form.email && form.message) {
-      setStatus('success')
-      setForm({ name: '', email: '', subject: '', message: '' })
-      setTimeout(() => setStatus(null), 5000)
+    
+    if (form.name && form.email && form.subject && form.message) {
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/lathusanlathusan40@gmail.com", {
+          method: "POST",
+          headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: form.name,
+            email: form.email,
+            _replyto: form.email,
+            _subject: form.subject,
+            message: form.message
+          })
+        });
+        
+        if (response.ok) {
+          setStatus('success')
+          setForm({ name: '', email: '', subject: '', message: '' })
+          setTimeout(() => setStatus(null), 5000)
+        } else {
+          setStatus('error')
+          setTimeout(() => setStatus(null), 3000)
+        }
+      } catch (error) {
+        setStatus('error')
+        setTimeout(() => setStatus(null), 3000)
+      }
     } else {
       setStatus('error')
       setTimeout(() => setStatus(null), 3000)

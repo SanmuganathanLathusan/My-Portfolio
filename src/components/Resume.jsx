@@ -116,16 +116,30 @@ export default function Resume() {
               <h3 className="text-dark-900 dark:text-white font-bold text-xl mb-1 transition-colors">{`Download My CV`}</h3>
               <p className="text-dark-600 dark:text-dark-400 text-sm transition-colors">Get the full picture — education, skills, projects, and references.</p>
             </div>
-            <a
-              href="/Lathusan_CV.pdf"
-              download
-              className="btn-primary whitespace-nowrap flex-shrink-0"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-              </svg>
-              Download CV
-            </a>
+            <div className="flex items-center gap-3 mt-4 sm:mt-0">
+              <a
+                href="/Lathusan_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline whitespace-nowrap flex-shrink-0"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+                View CV
+              </a>
+              <a
+                href="/Lathusan_CV.pdf"
+                download
+                className="btn-primary whitespace-nowrap flex-shrink-0"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Download CV
+              </a>
+            </div>
           </div>
         </div>
       </div>

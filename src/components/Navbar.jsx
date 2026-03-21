@@ -48,10 +48,9 @@ export default function Navbar({ scrolled, isDarkMode, toggleTheme }) {
         <a
           href="#hero"
           onClick={e => handleNavClick(e, '#hero')}
-          className="text-xl font-bold tracking-tight text-dark-900 dark:text-white"
+          className="text-2xl font-bold tracking-tight text-dark-900 dark:text-white"
         >
-          <span className="gradient-text">LA</span>
-          <span className="text-dark-500 dark:text-dark-400 font-mono text-sm ml-1">.dev</span>
+          <span className="gradient-text">Portfolio</span>
         </a>
 
         {/* Desktop links */}
