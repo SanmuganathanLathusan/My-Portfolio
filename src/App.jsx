@@ -40,7 +40,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-dark-900 transition-colors duration-300">
+    <div className="min-h-screen transition-colors duration-300">
       <Navbar scrolled={scrolled} isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <main>
         <Hero />
