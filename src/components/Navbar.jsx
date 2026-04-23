@@ -39,31 +39,30 @@ export default function Navbar({ scrolled, isDarkMode, toggleTheme }) {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/95 dark:bg-dark-900/95 backdrop-blur-md border-b border-gray-200 dark:border-dark-800 shadow-xl'
+          ? 'bg-white/85 dark:bg-dark-900/85 backdrop-blur-xl border-b border-gray-200 dark:border-dark-800 shadow-xl'
           : 'bg-transparent'
       }`}
     >
       <nav className="section-container h-16 flex items-center justify-between">
-        {/* Logo */}
         <a
           href="#hero"
           onClick={e => handleNavClick(e, '#hero')}
-          className="text-2xl font-bold tracking-tight text-dark-900 dark:text-white"
+          className="flex items-end gap-2 text-dark-900 dark:text-white"
         >
-          <span className="gradient-text">Portfolio</span>
+          <span className="text-xl md:text-2xl font-bold tracking-tight leading-none">Lathusan</span>
+          <span className="text-[10px] uppercase tracking-[0.26em] text-dark-500 dark:text-dark-400 pb-0.5">Portfolio</span>
         </a>
 
-        {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden md:flex items-center gap-2 p-1.5 rounded-full bg-gray-100/80 dark:bg-dark-800/70 border border-gray-200 dark:border-dark-700">
           {navLinks.map(link => (
             <li key={link.href}>
               <a
                 href={link.href}
                 onClick={e => handleNavClick(e, link.href)}
-                className={`nav-link text-sm ${
+                className={`text-sm px-3.5 py-1.5 rounded-full transition-all duration-200 ${
                   activeSection === link.href.slice(1)
-                    ? 'text-primary-600 dark:text-white after:w-full'
-                    : ''
+                    ? 'bg-white dark:bg-dark-700 text-dark-900 dark:text-white shadow'
+                    : 'text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white'
                 }`}
               >
                 {link.label}
@@ -75,7 +74,7 @@ export default function Navbar({ scrolled, isDarkMode, toggleTheme }) {
         <div className="hidden md:flex items-center gap-4 text-dark-800 dark:text-white">
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-dark-800 transition-colors focus:outline-none"
+            className="p-2 rounded-full bg-gray-100 dark:bg-dark-800 border border-gray-200 dark:border-dark-700 hover:bg-gray-200 dark:hover:bg-dark-700 transition-colors focus:outline-none"
             aria-label="Toggle dark mode"
           >
             {isDarkMode ? (
@@ -94,11 +93,10 @@ export default function Navbar({ scrolled, isDarkMode, toggleTheme }) {
             onClick={e => handleNavClick(e, '#contact')}
             className="btn-primary text-sm py-2 px-5"
           >
-            Hire Me
+            Let's Talk
           </a>
         </div>
 
-        {/* Mobile menu controls */}
         <div className="md:hidden flex items-center gap-3">
           <button
             onClick={toggleTheme}
@@ -128,7 +126,6 @@ export default function Navbar({ scrolled, isDarkMode, toggleTheme }) {
         </div>
       </nav>
 
-      {/* Mobile menu */}
       <div
         className={`md:hidden transition-all duration-300 overflow-hidden bg-white/98 dark:bg-dark-900/98 backdrop-blur-md border-b border-gray-200 dark:border-dark-800 shadow-xl ${
           menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
@@ -154,7 +151,7 @@ export default function Navbar({ scrolled, isDarkMode, toggleTheme }) {
               onClick={e => handleNavClick(e, '#contact')}
               className="btn-primary w-full justify-center"
             >
-              Hire Me
+              Let's Talk
             </a>
           </li>
         </ul>
