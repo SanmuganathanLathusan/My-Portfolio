@@ -4,8 +4,7 @@ import profileImg from '../assets/image1.png'
 const roles = [
   'Full Stack Developer',
   'Software Engineer',
-  'React Developer',
-  'Node.js Developer',
+  
 ]
 
 function TypewriterText({ texts }) {
@@ -46,41 +45,39 @@ function TypewriterText({ texts }) {
 export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center hero-bg grid-pattern overflow-hidden">
-      {/* Decorative blobs */}
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl pointer-events-none animate-pulse-slow" />
-      <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-cyan-500/8 rounded-full blur-3xl pointer-events-none animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
+      <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
 
       <div className="section-container w-full py-32 pt-24 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
 
-          {/* Left content */}
           <div className="flex-1 animate-slide-up">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-900/40 border border-primary-800/50 text-primary-300 text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-gray-200 dark:bg-dark-800/80 dark:border-dark-700 text-dark-700 dark:text-dark-200 text-sm font-medium mb-6">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              Available for Internships &amp; Part-time
+              Open to Software Engineering Internships
             </div>
 
-            {/* Name */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-dark-900 dark:text-white leading-tight mb-4 transition-colors duration-300">
-              Hi, I'm <br />
-              <span className="gradient-text">Lathusan</span>
+              Building dependable digital
+              <br />
+              products with <span className="gradient-text">clean engineering</span>
             </h1>
 
-            {/* Typewriter */}
+            <p className="text-dark-600 dark:text-dark-300 text-lg leading-relaxed max-w-2xl mb-6 transition-colors duration-300">
+              I'm
+              <span className="gradient-text">Lathusan</span>
+              , a Software Engineering undergraduate at Sabaragamuwa University. I design and build
+              full stack applications with strong attention to performance, maintainability, and user experience.
+            </p>
+
             <div className="text-xl sm:text-2xl font-semibold text-dark-600 dark:text-dark-200 mb-6 h-8 transition-colors duration-300">
               <TypewriterText texts={roles} />
             </div>
 
-            {/* Description */}
-            <p className="text-dark-600 dark:text-dark-300 text-lg leading-relaxed max-w-xl mb-8 transition-colors duration-300">
-              A passionate <strong className="text-dark-900 dark:text-white">Software Engineering undergraduate</strong> at{' '}
-              <strong className="text-primary-600 dark:text-primary-400">Sabaragamuwa University of Sri Lanka</strong>, building
-              scalable applications and actively seeking <strong className="text-dark-900 dark:text-white">Software Engineering</strong> and <strong className="text-dark-900 dark:text-white">Full Stack Dev</strong> internship opportunities to grow my skills
-              in real-world projects.
+            <p className="text-dark-500 dark:text-dark-400 text-sm uppercase tracking-[0.22em] mb-8">
+              React  Node.js  MongoDB  REST APIs
             </p>
 
-            {/* CTA buttons */}
             <div className="flex flex-wrap gap-4 mb-12">
               <a
                 href="#projects"
@@ -90,7 +87,7 @@ export default function Hero() {
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
-                View Projects
+                See Projects
               </a>
               <a
                 href="#contact"
@@ -100,11 +97,10 @@ export default function Hero() {
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                Contact Me
+                Start a Conversation
               </a>
             </div>
 
-            {/* Social links */}
             <div className="flex items-center gap-6">
               <span className="text-dark-400 text-sm">Find me on</span>
               {[
@@ -141,38 +137,24 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: Avatar placeholder */}
           <div className="flex-shrink-0 animate-float">
             <div className="relative w-64 h-64 md:w-80 md:h-80">
-              {/* Outer glow ring */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-500 to-cyan-500 p-1 glow">
                 <div className="w-full h-full rounded-full bg-white dark:bg-dark-800 flex items-center justify-center overflow-hidden transition-colors">
                   <img src={profileImg} alt="Lathusan" className="w-full h-full object-cover scale-110" />
                 </div>
               </div>
 
-              {/* Floating badge - University */}
-              <div className="absolute -bottom-4 -left-4 bg-gray-50 border border-gray-200 dark:bg-dark-800 dark:border-dark-600 rounded-xl px-3 py-2 flex items-center gap-2 shadow-xl transition-colors">
-                <span className="text-xl">🎓</span>
-                <div>
-                  <div className="text-dark-900 dark:text-white text-xs font-semibold transition-colors">SUSL</div>
-                  <div className="text-dark-500 dark:text-dark-400 text-xs transition-colors">SE Undergrad</div>
-                </div>
+              <div className="absolute -bottom-4 -left-4 bg-white border border-gray-200 dark:bg-dark-800 dark:border-dark-600 rounded-xl px-3 py-2 shadow-xl transition-colors">
+                <div className="text-dark-900 dark:text-white text-xs font-semibold transition-colors">SUSL</div>
+                <div className="text-dark-500 dark:text-dark-400 text-xs transition-colors">Software Engineering</div>
               </div>
 
-              {/* Floating badge - Exp */}
-              <div className="absolute -top-4 -right-4 bg-gray-50 border border-gray-200 dark:bg-dark-800 dark:border-dark-600 rounded-xl px-3 py-2 flex items-center gap-2 shadow-xl transition-colors">
-                <span className="text-xl">💻</span>
-                <div>
-                  <div className="text-dark-900 dark:text-white text-xs font-semibold transition-colors">2+ Years</div>
-                  <div className="text-dark-500 dark:text-dark-400 text-xs transition-colors">Coding</div>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
 
-        {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-dark-500 text-xs transition-colors">
           <span>Scroll down</span>
           <div className="w-5 h-8 border-2 border-dark-300 dark:border-dark-600 rounded-full flex justify-center pt-1 transition-colors">
