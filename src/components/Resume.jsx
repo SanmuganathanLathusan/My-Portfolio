@@ -1,3 +1,5 @@
+import cvFile from '../assets/Lathusan_CV.pdf'
+
 const experiences = [
   {
     type: 'education',
@@ -15,15 +17,67 @@ const experiences = [
     desc: 'Combined Maths, Physics, Chemistry. Qualified for University admissions.',
     icon: '📚',
   },
+  {
+  type: 'education',
+  title: 'G.C.E. Ordinary Level (O/L)',
+  org: '2018 Examination',
+  period: '2018',
+  desc: 'Successfully completed G.C.E. O/L with 6A passes and 3B passes.',
+  icon: '📘',
+},
 ]
 
 const certifications = [
-  { name: 'Meta Front-End Developer Professional', issuer: 'Coursera / Meta', year: '2024', badge: '🏅' },
-  { name: 'The Complete Node.js Developer Course', issuer: 'Udemy', year: '2023', badge: '🏅' },
-  { name: 'React – The Complete Guide', issuer: 'Udemy', year: '2023', badge: '🏅' },
-  { name: 'SQL & Database Design', issuer: 'LinkedIn Learning', year: '2023', badge: '🏅' },
+  {
+    name: 'Foundations: Data, Data, Everywhere',
+    issuer: 'Coursera',
+    year: '2025',
+    badge: '🏅',
+    link: '[Link]'
+  },
+  {
+    name: 'Crash Course: AWS Basics',
+    issuer: 'KodeKloud',
+    year: '2025',
+    badge: '🏅',
+    link: '[Link]'
+  },
+  {
+    name: 'Introduction to AI',
+    issuer: 'Coursera',
+    year: '2025',
+    badge: '🏅',
+    link: '[Link]'
+  },
+  {
+    name: 'Java Programming for Beginners',
+    issuer: 'Simplilearn',
+    year: '2026',
+    badge: '🏅',
+    link: '[Link]'
+  },
+  {
+    name: 'IEEE Day Program Team',
+    issuer: 'IEEE',
+    year: '2025',
+    badge: '🏅',
+    link: '[Link]'
+  },
+  {
+    name: 'Assured Diploma in Information Technology (DITEC)',
+    issuer: 'ESOFT Metro Campus / Pearson Education Ltd',
+    year: '2023',
+    badge: '🎓',
+    link: '[Link]'
+  },
+  {
+    name: 'Assured Diploma in English (DIE)',
+    issuer: 'ESOFT Metro Campus / Pearson Education Ltd',
+    year: '2023',
+    badge: '🎓',
+    link: '[Link]'
+  }
 ]
-
 const highlights = [
   { icon: '💼', text: 'Open to Full Stack, Backend & Frontend Internships' },
   { icon: '🌍', text: 'Willing to Work Remotely or On-site in Sri Lanka' },
@@ -118,7 +172,7 @@ export default function Resume() {
             </div>
             <div className="flex items-center gap-3 mt-4 sm:mt-0">
               <a
-                href="/Lathusan_CV.pdf"
+                href={cvFile}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline whitespace-nowrap flex-shrink-0"
@@ -130,8 +184,8 @@ export default function Resume() {
                 View CV
               </a>
               <a
-                href="/Lathusan_CV.pdf"
-                download
+                href={cvFile}
+                download="Lathusan_CV.pdf"
                 className="btn-primary whitespace-nowrap flex-shrink-0"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
