@@ -5,7 +5,7 @@ const skillCategories = [
     color: 'from-blue-500 to-cyan-500',
     skills: [
       { name: 'React.js', level: 85 },
-      { name: 'JavaScript (ES6+)', level: 88 },
+      { name: 'JavaScript ', level: 88 },
       { name: 'HTML5 & CSS3', level: 90 },
       { name: 'Tailwind CSS', level: 82 },
       { name: 'TypeScript', level: 65 },
