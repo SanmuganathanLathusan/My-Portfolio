@@ -1,34 +1,31 @@
 const projects = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'A full-featured MERN stack e-commerce application with product management, cart, user authentication with JWT, and Stripe payment integration.',
+    title: 'Buyzaar',
+    description: 'A full-featured MERN stack multi-vendor e-commerce platform where multiple sellers can manage products, customers can browse and purchase items, with secure JWT authentication, shopping cart functionality, order management, and Stripe payment integration.',
     tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe'],
-    github: 'https://github.com/SanmuganathanLathusan/ecommerce-app',
-    live: '#',
-    emoji: '🛒',
+    github: 'https://github.com/SanmuganathanLathusan/Buyzaar',
+    live: null,
     color: 'from-blue-600 to-cyan-600',
     featured: true,
   },
   {
     id: 2,
-    title: 'Task Management App',
-    description: 'A Kanban-style task manager with drag & drop, real-time updates, team collaboration features, and due date reminders.',
-    tags: ['React', 'Firebase', 'Tailwind CSS', 'DnD'],
-    github: 'https://github.com/SanmuganathanLathusan',
-    live: '#',
-    emoji: '📋',
-    color: 'from-purple-600 to-pink-600',
+    title: 'Bus Tracker App',
+    description: 'A real-time bus tracking application that allows users to monitor live bus locations, estimated arrival times, route details, and travel updates with a smooth mobile experience.',
+    tags: ['Flutter', 'Node.js', 'Express.js', 'MongoDB Atlas'],
+    github: 'https://github.com/SanmuganathanLathusan/bus_tracker',
+    live: null,
+    color: 'from-blue-600 to-green-600',
     featured: true,
   },
   {
     id: 3,
-    title: 'University Result Portal',
-    description: 'A web application for Sabaragamuwa University students to view semester results, GPA calculations, and transcript downloads.',
-    tags: ['PHP', 'MySQL', 'Bootstrap', 'HTML/CSS'],
-    github: 'https://github.com/SanmuganathanLathusan/result-portal',
-    live: '#',
-    emoji: '🎓',
+    title: 'PrimeLearn - Online Learning Platform',
+    description: 'A modern e-learning platform inspired by Udemy, where users can explore a wide range of courses, enroll in learning programs, track progress, and earn certifications upon course completion.',
+    tags: ['React.js', 'Laravel', 'MySQL', 'Bootstrap'],
+    github: 'https://github.com/SanmuganathanLathusan/LMS',
+    live: null,
     color: 'from-emerald-600 to-teal-600',
     featured: false,
   },
@@ -39,29 +36,26 @@ const projects = [
     tags: ['React', 'REST API', 'Chart.js', 'CSS3'],
     github: 'https://github.com/SanmuganathanLathusan/weather-app',
     live: 'https://weather-app-tan-psi-36.vercel.app/',
-    emoji: '🌤️',
     color: 'from-orange-600 to-yellow-600',
     featured: false,
   },
   {
     id: 5,
-    title: 'Blog REST API',
-    description: 'A RESTful API for a blogging platform built with Node.js, featuring JWT auth, CRUD endpoints, pagination, and Swagger documentation.',
-    tags: ['Node.js', 'Express', 'MongoDB', 'JWT', 'Swagger'],
-    github: 'https://github.com/SanmuganathanLathusan/blog-api',
+    title: 'BodyLogic - Doctor Appointment Web App',
+    description: 'A modern healthcare web application built with Next.js and MongoDB Atlas, allowing users to book doctor appointments, manage schedules, view available time slots, and access a smooth responsive interface.',
+    tags: ['Next.js', 'MongoDB Atlas', 'JavaScript', 'Responsive Design'],
+    github: 'https://github.com/SanmuganathanLathusan/BodyLogic',
     live: null,
-    emoji: '📝',
-    color: 'from-rose-600 to-red-600',
+    color: 'from-cyan-600 to-blue-600',
     featured: false,
   },
   {
     id: 6,
-    title: 'Portfolio Website',
-    description: 'This very portfolio! Built with React, Vite, and Tailwind CSS. Features smooth animations, responsive design, and modern UI patterns.',
-    tags: ['React', 'Vite', 'Tailwind CSS', 'JavaScript'],
-    github: 'https://github.com/SanmuganathanLathusan/portfolio',
-    live: '#',
-    emoji: '⚡',
+    title: 'Yumzy - Food Delivery Website',
+    description: 'A modern food delivery front-end website built with React.js, featuring responsive design, interactive menus, smooth navigation, and a user-friendly ordering interface for an enhanced customer experience.',
+    tags: ['React.js', 'JavaScript', 'CSS', 'Responsive Design'],
+    github: 'https://github.com/SanmuganathanLathusan/Yumzy',
+    live: null,
     color: 'from-indigo-600 to-violet-600',
     featured: false,
   },
@@ -88,16 +82,15 @@ function ProjectCard({ project }) {
     <div className={`card flex flex-col h-full group ${project.featured ? 'ring-1 ring-primary-600/30' : ''}`}>
       {project.featured && (
         <div className="flex items-center gap-1 mb-4">
-          <span className="text-xs font-semibold text-primary-400 uppercase tracking-wider bg-primary-900/40 border border-primary-800/50 px-2 py-0.5 rounded-full">
-            ⭐ Featured
+          <span className="text-xs font-semibold text-primary-700 dark:text-primary-300 uppercase tracking-wider bg-primary-100 dark:bg-primary-900/40 border border-primary-200 dark:border-primary-800/50 px-2 py-0.5 rounded-full">
+            Featured
           </span>
         </div>
       )}
 
-      {/* Project header */}
       <div className="flex items-start gap-3 mb-4">
-        <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${project.color} flex items-center justify-center text-2xl flex-shrink-0`}>
-          {project.emoji}
+        <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${project.color} flex items-center justify-center text-white text-sm font-semibold tracking-widest flex-shrink-0`}>
+          CASE
         </div>
         <div>
           <h3 className="text-dark-900 dark:text-white font-bold text-lg group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
@@ -106,19 +99,16 @@ function ProjectCard({ project }) {
         </div>
       </div>
 
-      {/* Description */}
       <p className="text-dark-600 dark:text-dark-300 text-sm leading-relaxed mb-5 flex-1 transition-colors">
         {project.description}
       </p>
 
-      {/* Tags */}
       <div className="flex flex-wrap gap-2 mb-5">
         {project.tags.map(tag => (
           <span key={tag} className="tag">{tag}</span>
         ))}
       </div>
 
-      {/* Links */}
       <div className="flex items-center gap-3 mt-auto">
         <a
           href={project.github}
@@ -127,9 +117,9 @@ function ProjectCard({ project }) {
           className="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white text-sm font-medium transition-colors"
         >
           <GitHubIcon />
-          Code
+          Source
         </a>
-        {project.live && (
+        {project.live && project.live !== '#' && (
           <>
             <span className="text-gray-300 dark:text-dark-700">|</span>
             <a
@@ -139,7 +129,7 @@ function ProjectCard({ project }) {
               className="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 text-sm font-medium transition-colors"
             >
               <ExternalLinkIcon />
-              Live Demo
+              Live
             </a>
           </>
         )}
@@ -155,32 +145,28 @@ export default function Projects() {
   return (
     <section id="projects" className="section-padding bg-dark-800/30">
       <div className="section-container">
-        {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 tag mb-4">Portfolio</div>
+          <div className="inline-flex items-center gap-2 tag mb-4">Selected Work</div>
           <h2 className="section-title">Featured <span className="gradient-text">Projects</span></h2>
           <p className="section-subtitle max-w-2xl mx-auto">
-            A selection of projects I've built to sharpen my skills and solve real problems.
+            A curated set of applications that demonstrate my engineering process and delivery quality.
           </p>
         </div>
 
-        {/* Featured grid (2 cols) */}
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           {featured.map(project => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
 
-        {/* Other projects (3 cols) */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {rest.map(project => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
 
-        {/* GitHub CTA */}
         <div className="text-center mt-12">
-          <p className="text-dark-400 mb-4">Want to see more?</p>
+          <p className="text-dark-400 mb-4">Explore additional repositories</p>
           <a
             href="https://github.com/SanmuganathanLathusan"
             target="_blank"
