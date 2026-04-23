@@ -1,149 +1,87 @@
 const stats = [
-  { value: '2+', label: 'Years Coding' },
-  { value: '10+', label: 'Projects Built' },
-  { value: '3rd', label: 'Year Student' },
-  { value: '5+', label: 'Technologies' },
+  { value: '2+', label: 'Years Building' },
+  { value: '10+', label: 'Projects Shipped' },
+  { value: '3rd', label: 'Academic Year' },
+  { value: '6+', label: 'Core Technologies' },
+]
+
+const highlights = [
+  {
+    title: 'Engineering Mindset',
+    text: 'I focus on clean architecture, reusable components, and maintainable code that teams can scale.',
+  },
+  {
+    title: 'Product Thinking',
+    text: 'I prioritize real user needs, clear interfaces, and measurable outcomes in every project.',
+  },
+  {
+    title: 'Collaboration Ready',
+    text: 'I communicate clearly, document decisions, and work effectively in team environments.',
+  },
 ]
 
 export default function About() {
   return (
     <section id="about" className="section-padding bg-dark-800/30">
       <div className="section-container">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
-
-          {/* Left: Code block visual */}
-          <div className="flex-shrink-0 w-full lg:w-auto">
-            <div className="relative bg-dark-800 border border-dark-700 rounded-2xl overflow-hidden max-w-md mx-auto shadow-2xl">
-              {/* Window chrome */}
-              <div className="flex items-center gap-2 px-4 py-3 bg-dark-900 border-b border-dark-700">
-                <div className="w-3 h-3 rounded-full bg-red-500" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                <div className="w-3 h-3 rounded-full bg-green-500" />
-                <span className="ml-2 text-dark-400 text-sm font-mono">about.js</span>
-              </div>
-
-              {/* Code content */}
-              <pre className="p-6 text-sm font-mono leading-relaxed overflow-x-auto">
-                <code>
-                  <span className="text-purple-400">const</span>
-                  <span className="text-white"> developer </span>
-                  <span className="text-cyan-400">= </span>
-                  <span className="text-yellow-400">{'{'}</span>
-                  {'\n'}
-                  {'  '}
-                  <span className="text-blue-400">name</span>
-                  <span className="text-white">: </span>
-                  <span className="text-green-400">"sanmuganathan Lathusan"</span>
-                  <span className="text-white">,</span>
-                  {'\n'}
-                  {'  '}
-                  <span className="text-blue-400">university</span>
-                  <span className="text-white">: </span>
-                  <span className="text-green-400">"SUSL"</span>
-                  <span className="text-white">,</span>
-                  {'\n'}
-                  {'  '}
-                  <span className="text-blue-400">degree</span>
-                  <span className="text-white">: </span>
-                  <span className="text-green-400">"BSc Software Engineering"</span>
-                  <span className="text-white">,</span>
-                  {'\n'}
-                  {'  '}
-                  <span className="text-blue-400">year</span>
-                  <span className="text-white">: </span>
-                  <span className="text-orange-400">3</span>
-                  <span className="text-white">,</span>
-                  {'\n'}
-                  {'  '}
-                  <span className="text-blue-400">seeking</span>
-                  <span className="text-white">: </span>
-                  <span className="text-green-400">"SE & Full Stack Internship"</span>
-                  <span className="text-white">,</span>
-                  {'\n'}
-                  {'  '}
-                  <span className="text-blue-400">languages</span>
-                  <span className="text-white">: [</span>
-                  <span className="text-green-400">"Python"</span>
-                  <span className="text-white">, </span>
-                  <span className="text-green-400">"Java"</span>
-                  <span className="text-white">, </span>
-                  <span className="text-green-400">"C"</span>
-                  <span className="text-white">],</span>
-                  {'\n'}
-                  {'  '}
-                  <span className="text-blue-400">passions</span>
-                  <span className="text-white">: [</span>
-                  {'\n'}
-                  {'    '}
-                  <span className="text-green-400">"Full Stack Dev"</span>
-                  <span className="text-white">,</span>
-                  {'\n'}
-                  {'    '}
-                  <span className="text-green-400">"Open Source"</span>
-                  <span className="text-white">,</span>
-                  {'\n'}
-                  {'    '}
-                  <span className="text-green-400">"Problem Solving"</span>
-                  {'\n'}
-                  {'  '}
-                  <span className="text-white">],</span>
-                  {'\n'}
-                  {'  '}
-                  <span className="text-blue-400">available</span>
-                  <span className="text-white">: </span>
-                  <span className="text-orange-400">true</span>
-                  {'\n'}
-                  <span className="text-yellow-400">{'}'}</span>
-                  <span className="text-white">;</span>
-                </code>
-              </pre>
-            </div>
-          </div>
-
-          {/* Right: Content */}
-          <div className="flex-1 max-w-xl">
-            <div className="inline-flex items-center gap-2 tag mb-4">About Me</div>
-            <h2 className="section-title">
-              Passionate Developer &amp;{' '}
-              <span className="gradient-text">Problem Solver</span>
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+          <div className="card">
+            <p className="text-dark-500 dark:text-dark-400 text-xs uppercase tracking-[0.22em] mb-5">Profile</p>
+            <h2 className="section-title mb-5">
+              Software Engineering Student with
+              <span className="gradient-text"> Full Stack Focus</span>
             </h2>
-            <p className="text-dark-600 dark:text-dark-300 leading-relaxed mb-6 transition-colors duration-300">
-              I'm a 3rd-year <strong className="text-dark-900 dark:text-white">Software Engineering undergraduate</strong> at
-              Sabaragamuwa University of Sri Lanka. I'm deeply passionate about building web applications
-              that make a difference — from clean frontends to robust backends.
+            <p className="text-dark-600 dark:text-dark-300 leading-relaxed mb-5 transition-colors duration-300">
+              I am a third-year Software Engineering undergraduate at Sabaragamuwa University of Sri Lanka.
+              My work centers on building dependable web applications from frontend interface design to backend API development.
             </p>
             <p className="text-dark-600 dark:text-dark-300 leading-relaxed mb-8 transition-colors duration-300">
-              With hands-on experience in <strong className="text-primary-600 dark:text-primary-400">React, Node.js, Express</strong>, programming languages like <strong className="text-primary-600 dark:text-primary-400">Python, Java, and C</strong>, and databases like MongoDB and MySQL, I thrive in collaborative environments and love tackling
-              complex challenges with elegant, efficient solutions. I'm actively seeking <strong className="text-dark-900 dark:text-white">Software Engineering</strong> and <strong className="text-dark-900 dark:text-white">Full Stack Development</strong> internship opportunities
-              to gain industry exposure and contribute to meaningful projects.
+              I have hands-on experience with React, Node.js, Express, MongoDB, and MySQL, with strong programming fundamentals
+              in Python, Java, and C. I am actively seeking Software Engineering and Full Stack internship opportunities.
             </p>
 
-            {/* Info grid */}
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              {[
-                { icon: '🎓', label: 'University', value: 'Sabaragamuwa University of Sri Lanka' },
-                { icon: '📍', label: 'Location', value: 'Vellankulam,Mannar, Sri Lanka' },
-                { icon: '📧', label: 'Email', value: 'lathusanlathusan40@example.com' },
-                { icon: '🎯', label: 'Goal', value: 'Full Stack / Software Engineering Internship' },
-              ].map(item => (
-                <div key={item.label} className="bg-gray-50 border border-gray-200 dark:bg-dark-800 dark:border-dark-700 rounded-xl p-4 transition-colors duration-300">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span>{item.icon}</span>
-                    <span className="text-dark-500 dark:text-dark-400 text-xs uppercase tracking-wider transition-colors">{item.label}</span>
-                  </div>
-                  <p className="text-dark-900 dark:text-white text-sm font-medium transition-colors">{item.value}</p>
-                </div>
-              ))}
+            <div className="grid grid-cols-2 gap-3 mb-8">
+              <div className="rounded-xl border border-gray-200 dark:border-dark-700 bg-white/70 dark:bg-dark-800/60 p-3">
+                <p className="text-dark-500 dark:text-dark-400 text-[11px] uppercase tracking-wider mb-1">University</p>
+                <p className="text-dark-900 dark:text-white text-sm font-semibold">SUSL</p>
+              </div>
+              <div className="rounded-xl border border-gray-200 dark:border-dark-700 bg-white/70 dark:bg-dark-800/60 p-3">
+                <p className="text-dark-500 dark:text-dark-400 text-[11px] uppercase tracking-wider mb-1">Location</p>
+                <p className="text-dark-900 dark:text-white text-sm font-semibold">Mannar, Sri Lanka</p>
+              </div>
+              <div className="rounded-xl border border-gray-200 dark:border-dark-700 bg-white/70 dark:bg-dark-800/60 p-3">
+                <p className="text-dark-500 dark:text-dark-400 text-[11px] uppercase tracking-wider mb-1">Primary Stack</p>
+                <p className="text-dark-900 dark:text-white text-sm font-semibold">MERN + MySQL</p>
+              </div>
+              <div className="rounded-xl border border-gray-200 dark:border-dark-700 bg-white/70 dark:bg-dark-800/60 p-3">
+                <p className="text-dark-500 dark:text-dark-400 text-[11px] uppercase tracking-wider mb-1">Availability</p>
+                <p className="text-dark-900 dark:text-white text-sm font-semibold">Internships</p>
+              </div>
             </div>
 
-            <a href="#contact" onClick={e => { e.preventDefault(); document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' }) }} className="btn-primary">
+            <a
+              href="#contact"
+              onClick={e => {
+                e.preventDefault()
+                document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })
+              }}
+              className="btn-primary"
+            >
               Let's Connect
             </a>
           </div>
+
+          <div className="space-y-4">
+            {highlights.map(item => (
+              <div key={item.title} className="card">
+                <h3 className="text-dark-900 dark:text-white font-semibold text-lg mb-2">{item.title}</h3>
+                <p className="text-dark-600 dark:text-dark-300 text-sm leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Stats row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14">
           {stats.map(stat => (
             <div key={stat.label} className="card text-center transition-colors duration-300">
               <div className="text-3xl font-extrabold gradient-text mb-1">{stat.value}</div>
