@@ -1,3 +1,5 @@
+import { ShoppingCart, MapPin, GraduationCap, CloudSun, Stethoscope, Pizza } from 'lucide-react'
+
 const projects = [
   {
     id: 1,
@@ -7,6 +9,7 @@ const projects = [
     github: 'https://github.com/SanmuganathanLathusan/Buyzaar',
     live: null,
     color: 'from-blue-600 to-cyan-600',
+    icon: <ShoppingCart size={24} />,
     featured: true,
   },
   {
@@ -17,6 +20,7 @@ const projects = [
     github: 'https://github.com/SanmuganathanLathusan/bus_tracker',
     live: null,
     color: 'from-blue-600 to-green-600',
+    icon: <MapPin size={24} />,
     featured: true,
   },
   {
@@ -27,36 +31,40 @@ const projects = [
     github: 'https://github.com/SanmuganathanLathusan/LMS',
     live: null,
     color: 'from-emerald-600 to-teal-600',
+    icon: <GraduationCap size={24} />,
     featured: false,
   },
   {
     id: 4,
     title: 'Weather Dashboard',
     description: 'Real-time weather application using the OpenWeather API with 7-day forecasts, interactive maps, hourly data, and city search.',
-    tags: ['React', 'REST API', 'Chart.js', 'CSS3'],
+    tags: ['React', 'Chart.js', 'CSS3'],
     github: 'https://github.com/SanmuganathanLathusan/weather-app',
     live: 'https://weather-app-tan-psi-36.vercel.app/',
     color: 'from-orange-600 to-yellow-600',
+    icon: <CloudSun size={24} />,
     featured: false,
   },
   {
     id: 5,
     title: 'BodyLogic - Doctor Appointment Web App',
     description: 'A modern healthcare web application built with Next.js and MongoDB Atlas, allowing users to book doctor appointments, manage schedules, view available time slots, and access a smooth responsive interface.',
-    tags: ['Next.js', 'MongoDB Atlas', 'JavaScript', 'Responsive Design'],
+    tags: ['Next.js', 'MongoDB Atlas', 'JavaScript'],
     github: 'https://github.com/SanmuganathanLathusan/BodyLogic',
     live: null,
     color: 'from-cyan-600 to-blue-600',
+    icon: <Stethoscope size={24} />,
     featured: false,
   },
   {
     id: 6,
     title: 'Yumzy - Food Delivery Website',
     description: 'A modern food delivery front-end website built with React.js, featuring responsive design, interactive menus, smooth navigation, and a user-friendly ordering interface for an enhanced customer experience.',
-    tags: ['React.js', 'JavaScript', 'CSS', 'Responsive Design'],
+    tags: ['React.js', 'JavaScript', 'CSS3'],
     github: 'https://github.com/SanmuganathanLathusan/Yumzy',
     live: null,
     color: 'from-indigo-600 to-violet-600',
+    icon: <Pizza size={24} />,
     featured: false,
   },
 ]
@@ -77,6 +85,44 @@ function ExternalLinkIcon() {
   )
 }
 
+function TechTag({ name }) {
+  const techIcons = {
+    'React': 'https://cdn.simpleicons.org/react/61DAFB',
+    'React.js': 'https://cdn.simpleicons.org/react/61DAFB',
+    'Node.js': 'https://cdn.simpleicons.org/nodedotjs/339933',
+    'MongoDB': 'https://cdn.simpleicons.org/mongodb/47A248',
+    'MongoDB Atlas': 'https://cdn.simpleicons.org/mongodb/47A248',
+    'Express': 'https://cdn.simpleicons.org/express/000000',
+    'Express.js': 'https://cdn.simpleicons.org/express/000000',
+    'Stripe': 'https://cdn.simpleicons.org/stripe/008CDD',
+    'Flutter': 'https://cdn.simpleicons.org/flutter/02569B',
+    'Laravel': 'https://cdn.simpleicons.org/laravel/FF2D20',
+    'MySQL': 'https://cdn.simpleicons.org/mysql/4479A1',
+    'Bootstrap': 'https://cdn.simpleicons.org/bootstrap/7952B3',
+    'Chart.js': 'https://cdn.simpleicons.org/chartdotjs/FF6384',
+    'CSS3': 'https://cdn.simpleicons.org/css/1572B6',
+    'CSS': 'https://cdn.simpleicons.org/css/1572B6',
+    'Next.js': 'https://cdn.simpleicons.org/nextdotjs/000000',
+    'JavaScript': 'https://cdn.simpleicons.org/javascript/F7DF1E',
+  }
+
+  const iconUrl = techIcons[name]
+  const invertInDarkMode = ['Express', 'Express.js', 'Next.js'].includes(name)
+
+  return (
+    <span className="tag flex items-center gap-1.5 py-1 px-2.5">
+      {iconUrl && (
+        <img 
+          src={iconUrl} 
+          alt={name} 
+          className={`w-3.5 h-3.5 ${invertInDarkMode ? 'dark:invert' : ''}`} 
+        />
+      )}
+      {name}
+    </span>
+  )
+}
+
 function ProjectCard({ project }) {
   return (
     <div className={`card flex flex-col h-full group ${project.featured ? 'ring-1 ring-primary-600/30' : ''}`}>
@@ -89,8 +135,8 @@ function ProjectCard({ project }) {
       )}
 
       <div className="flex items-start gap-3 mb-4">
-        <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${project.color} flex items-center justify-center text-white text-sm font-semibold tracking-widest flex-shrink-0`}>
-          CASE
+        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${project.color} flex items-center justify-center text-white shadow-lg flex-shrink-0`}>
+          {project.icon}
         </div>
         <div>
           <h3 className="text-dark-900 dark:text-white font-bold text-lg group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
@@ -105,7 +151,7 @@ function ProjectCard({ project }) {
 
       <div className="flex flex-wrap gap-2 mb-5">
         {project.tags.map(tag => (
-          <span key={tag} className="tag">{tag}</span>
+          <TechTag key={tag} name={tag} />
         ))}
       </div>
 
