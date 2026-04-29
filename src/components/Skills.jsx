@@ -1,7 +1,9 @@
+import { LayoutDashboard, Server, Wrench, Code2 } from 'lucide-react'
+
 const skillCategories = [
   {
     title: 'Frontend',
-    icon: '🎨',
+    icon: <LayoutDashboard className="text-white" size={24} />,
     color: 'from-blue-500 to-cyan-500',
     skills: [
       { name: 'React.js', level: 85 },
@@ -14,7 +16,7 @@ const skillCategories = [
   },
   {
     title: 'Backend',
-    icon: '⚙️',
+    icon: <Server className="text-white" size={24} />,
     color: 'from-emerald-500 to-teal-500',
     skills: [
       { name: 'Node.js', level: 80 },
@@ -22,12 +24,12 @@ const skillCategories = [
       { name: 'REST APIs', level: 85 },
       { name: 'MongoDB', level: 75 },
       { name: 'MySQL', level: 72 },
-      { name: 'PHP', level: 65 },
+      { name: 'Laravel', level: 65 },
     ]
   },
   {
     title: 'Tools & DevOps',
-    icon: '🛠️',
+    icon: <Wrench className="text-white" size={24} />,
     color: 'from-purple-500 to-pink-500',
     skills: [
       { name: 'Git & GitHub', level: 88 },
@@ -36,11 +38,12 @@ const skillCategories = [
       { name: 'Linux / CLI', level: 70 },
       { name: 'Postman', level: 82 },
       { name: 'Figma', level: 60 },
+      { name: 'Stitch', level: 65 },
     ]
   },
   {
     title: 'Languages',
-    icon: '💻',
+    icon: <Code2 className="text-white" size={24} />,
     color: 'from-orange-500 to-yellow-500',
     skills: [
       { name: 'Python', level: 85 },
@@ -49,6 +52,7 @@ const skillCategories = [
       { name: 'JavaScript', level: 88 },
       { name: 'TypeScript', level: 65 },
       { name: 'SQL', level: 80 },
+      { name: 'PHP', level: 65 },
     ]
   }
 ]
