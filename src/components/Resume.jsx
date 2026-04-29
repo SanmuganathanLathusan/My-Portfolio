@@ -1,4 +1,5 @@
 import cvFile from '../assets/Lathusan_CV.pdf'
+import { GraduationCap, BookOpen, Book, Award, Briefcase, Globe, Calendar, Rocket, Sparkles, Eye, Download } from 'lucide-react'
 
 const experiences = [
   {
@@ -7,7 +8,7 @@ const experiences = [
     org: 'Sabaragamuwa University of Sri Lanka',
     period: '2022 – Present',
     desc: 'Currently in 3rd year. Relevant coursework: Data Structures & Algorithms, Web Development, Database Systems, OOP, Software Architecture.',
-    icon: '🎓',
+    icon: <GraduationCap size={16} />,
   },
   {
     type: 'education',
@@ -15,7 +16,7 @@ const experiences = [
     org: 'Maths Stream | 2020',
     period: '2020',
     desc: 'Combined Maths, Physics, Chemistry. Qualified for University admissions.',
-    icon: '📚',
+    icon: <BookOpen size={16} />,
   },
   {
   type: 'education',
@@ -23,7 +24,7 @@ const experiences = [
   org: '2018 Examination',
   period: '2018',
   desc: 'Successfully completed G.C.E. O/L with 6A passes and 3B passes.',
-  icon: '📘',
+  icon: <Book size={16} />,
 },
 ]
 
@@ -32,57 +33,57 @@ const certifications = [
     name: 'Foundations: Data, Data, Everywhere',
     issuer: 'Coursera',
     year: '2025',
-    badge: '🏅',
+    badge: <Award size={24} className="text-primary-500" />,
     link: '[Link]'
   },
   {
     name: 'Crash Course: AWS Basics',
     issuer: 'KodeKloud',
     year: '2025',
-    badge: '🏅',
+    badge: <Award size={24} className="text-primary-500" />,
     link: '[Link]'
   },
   {
     name: 'Introduction to AI',
     issuer: 'Coursera',
     year: '2025',
-    badge: '🏅',
+    badge: <Award size={24} className="text-primary-500" />,
     link: '[Link]'
   },
   {
     name: 'Java Programming for Beginners',
     issuer: 'Simplilearn',
     year: '2026',
-    badge: '🏅',
+    badge: <Award size={24} className="text-primary-500" />,
     link: '[Link]'
   },
   {
     name: 'IEEE Day Program Team',
     issuer: 'IEEE',
     year: '2025',
-    badge: '🏅',
+    badge: <Award size={24} className="text-primary-500" />,
     link: '[Link]'
   },
   {
     name: 'Assured Diploma in Information Technology (DITEC)',
     issuer: 'ESOFT Metro Campus / Pearson Education Ltd',
     year: '2023',
-    badge: '🎓',
+    badge: <GraduationCap size={24} className="text-primary-500" />,
     link: '[Link]'
   },
   {
     name: 'Assured Diploma in English (DIE)',
     issuer: 'ESOFT Metro Campus / Pearson Education Ltd',
     year: '2023',
-    badge: '🎓',
+    badge: <GraduationCap size={24} className="text-primary-500" />,
     link: '[Link]'
   }
 ]
 const highlights = [
-  { icon: '💼', text: 'Open to Full Stack, Backend & Frontend Internships' },
-  { icon: '🌍', text: 'Willing to Work Remotely or On-site in Sri Lanka' },
-  { icon: '📅', text: 'Available from June 2025 for 6-month internships' },
-  { icon: '🚀', text: 'Fast learner with strong teamwork & communication' },
+  { icon: <Briefcase size={20} className="text-primary-500" />, text: 'Open to Full Stack, Backend & Frontend Internships' },
+  { icon: <Globe size={20} className="text-primary-500" />, text: 'Willing to Work Remotely or On-site in Sri Lanka' },
+  { icon: <Calendar size={20} className="text-primary-500" />, text: 'Available from June 2025 for 6-month internships' },
+  { icon: <Rocket size={20} className="text-primary-500" />, text: 'Fast learner with strong teamwork & communication' },
 ]
 
 export default function Resume() {
@@ -102,7 +103,7 @@ export default function Resume() {
           {/* Left: Education timeline */}
           <div>
             <h3 className="text-dark-900 dark:text-white font-bold text-xl mb-8 flex items-center gap-3 transition-colors">
-              <span className="w-8 h-8 rounded-lg bg-primary-600/20 border border-primary-600/30 flex items-center justify-center text-primary-600 dark:text-primary-400">🎓</span>
+              <span className="w-8 h-8 rounded-lg bg-primary-600/20 border border-primary-600/30 flex items-center justify-center text-primary-600 dark:text-primary-400"><GraduationCap size={18} /></span>
               Education
             </h3>
             <div className="relative border-l-2 border-gray-200 dark:border-dark-700 pl-8 space-y-8 transition-colors">
@@ -129,7 +130,7 @@ export default function Resume() {
             {/* Certifications */}
             <div>
               <h3 className="text-dark-900 dark:text-white font-bold text-xl mb-8 flex items-center gap-3 transition-colors">
-                <span className="w-8 h-8 rounded-lg bg-primary-600/20 border border-primary-600/30 flex items-center justify-center text-primary-600 dark:text-primary-400">🏅</span>
+                <span className="w-8 h-8 rounded-lg bg-primary-600/20 border border-primary-600/30 flex items-center justify-center text-primary-600 dark:text-primary-400"><Award size={18} /></span>
                 Certifications
               </h3>
               <div className="space-y-3">
@@ -148,7 +149,7 @@ export default function Resume() {
             {/* Highlights */}
             <div>
               <h3 className="text-dark-900 dark:text-white font-bold text-xl mb-6 flex items-center gap-3 transition-colors">
-                <span className="w-8 h-8 rounded-lg bg-primary-600/20 border border-primary-600/30 flex items-center justify-center text-primary-600 dark:text-primary-400">✨</span>
+                <span className="w-8 h-8 rounded-lg bg-primary-600/20 border border-primary-600/30 flex items-center justify-center text-primary-600 dark:text-primary-400"><Sparkles size={18} /></span>
                 Why Hire Me?
               </h3>
               <div className="space-y-3">
