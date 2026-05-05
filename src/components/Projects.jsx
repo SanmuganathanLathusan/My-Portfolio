@@ -19,6 +19,7 @@ const projects = [
     tags: ['Flutter', 'Node.js', 'Express.js', 'MongoDB Atlas'],
     github: 'https://github.com/SanmuganathanLathusan/bus_tracker',
     live: null,
+    youtube: 'https://youtu.be/uUI3g-0C7OE',
     color: 'from-blue-600 to-green-600',
     icon: <MapPin size={24} />,
     featured: true,
@@ -51,7 +52,8 @@ const projects = [
     description: 'A modern healthcare web application built with Next.js and MongoDB Atlas, allowing users to book doctor appointments, manage schedules, view available time slots, and access a smooth responsive interface.',
     tags: ['Next.js', 'MongoDB Atlas', 'JavaScript'],
     github: 'https://github.com/SanmuganathanLathusan/BodyLogic',
-    live: null,
+    live: 'https://body-logic-iota.vercel.app/',
+    
     color: 'from-cyan-600 to-blue-600',
     icon: <Stethoscope size={24} />,
     featured: false,
@@ -81,6 +83,14 @@ function ExternalLinkIcon() {
   return (
     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+    </svg>
+  )
+}
+
+function YouTubeIcon() {
+  return (
+    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M23.498 6.186a2.964 2.964 0 00-2.088-2.094C19.57 3.5 12 3.5 12 3.5s-7.57 0-9.41.592A2.964 2.964 0 00.502 6.186 30.78 30.78 0 000 12a30.78 30.78 0 00.502 5.814 2.964 2.964 0 002.088 2.094C4.43 20.5 12 20.5 12 20.5s7.57 0 9.41-.592a2.964 2.964 0 002.088-2.094A30.78 30.78 0 0024 12a30.78 30.78 0 00-.502-5.814zM9.6 15.5v-7l6 3.5-6 3.5z" />
     </svg>
   )
 }
@@ -176,6 +186,20 @@ function ProjectCard({ project }) {
             >
               <ExternalLinkIcon />
               Live
+            </a>
+          </>
+        )}
+        {project.youtube && project.youtube !== '#' && (
+          <>
+            <span className="text-gray-300 dark:text-dark-700">|</span>
+            <a
+              href={project.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-red-600 dark:hover:text-red-400 text-sm font-medium transition-colors"
+            >
+              <YouTubeIcon />
+              YouTube
             </a>
           </>
         )}
