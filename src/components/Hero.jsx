@@ -52,11 +52,6 @@ export default function Hero() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
 
           <div className="flex-1 animate-slide-up">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-gray-200 dark:bg-dark-800/80 dark:border-dark-700 text-dark-700 dark:text-dark-200 text-sm font-medium mb-6">
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              Open to Software Engineering Internships
-            </div>
-
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-dark-900 dark:text-white leading-tight mb-4 transition-colors duration-300">
               Building dependable digital
               <br />
