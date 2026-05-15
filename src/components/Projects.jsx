@@ -1,4 +1,8 @@
-import { ShoppingCart, MapPin, GraduationCap, CloudSun, Stethoscope, Pizza } from 'lucide-react'
+import { ShoppingCart, MapPin, GraduationCap, Stethoscope, Pizza, Brain } from 'lucide-react'
+import buyzaarImg from '../assets/projects/buyzaar.png'
+import busTrackerImg from '../assets/projects/bus_tracker.png'
+import primelearnImg from '../assets/projects/primelearn.png'
+import intervueaiImg from '../assets/projects/intervueai.png'
 
 const projects = [
   {
@@ -8,8 +12,7 @@ const projects = [
     tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe'],
     github: 'https://github.com/SanmuganathanLathusan/Buyzaar',
     live: null,
-    color: 'from-blue-600 to-cyan-600',
-    icon: <ShoppingCart size={24} />,
+    image: buyzaarImg,
     featured: true,
   },
   {
@@ -20,30 +23,27 @@ const projects = [
     github: 'https://github.com/SanmuganathanLathusan/bus_tracker',
     live: null,
     youtube: 'https://youtu.be/uUI3g-0C7OE',
-    color: 'from-blue-600 to-green-600',
-    icon: <MapPin size={24} />,
+    image: busTrackerImg,
     featured: true,
   },
   {
     id: 3,
+    title: 'IntervueAI',
+    description: 'AI-powered interview preparation platform featuring resume analysis, adaptive mock interviews, AI career coaching, speech recognition, and performance analytics.',
+    tags: ['React', 'FastAPI', 'MongoDB', 'Gemini API'],
+    github: 'https://github.com/SanmuganathanLathusan/intervueai',
+    live: '#',
+    image: intervueaiImg,
+    featured: true,
+  },
+  {
+    id: 4,
     title: 'PrimeLearn - Online Learning Platform',
     description: 'A modern e-learning platform inspired by Udemy, where users can explore a wide range of courses, enroll in learning programs, track progress, and earn certifications upon course completion.',
     tags: ['React.js', 'Laravel', 'MySQL', 'Bootstrap'],
     github: 'https://github.com/SanmuganathanLathusan/LMS',
     live: null,
-    color: 'from-emerald-600 to-teal-600',
-    icon: <GraduationCap size={24} />,
-    featured: false,
-  },
-  {
-    id: 4,
-    title: 'Weather Dashboard',
-    description: 'Real-time weather application using the OpenWeather API with 7-day forecasts, interactive maps, hourly data, and city search.',
-    tags: ['React', 'Chart.js', 'CSS3'],
-    github: 'https://github.com/SanmuganathanLathusan/weather-app',
-    live: 'https://weather-app-tan-psi-36.vercel.app/',
-    color: 'from-orange-600 to-yellow-600',
-    icon: <CloudSun size={24} />,
+    image: primelearnImg,
     featured: false,
   },
   {
@@ -53,9 +53,7 @@ const projects = [
     tags: ['Next.js', 'MongoDB Atlas', 'JavaScript'],
     github: 'https://github.com/SanmuganathanLathusan/BodyLogic',
     live: 'https://body-logic-iota.vercel.app/',
-    
-    color: 'from-cyan-600 to-blue-600',
-    icon: <Stethoscope size={24} />,
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800',
     featured: false,
   },
   {
@@ -65,8 +63,7 @@ const projects = [
     tags: ['React.js', 'JavaScript', 'CSS3'],
     github: 'https://github.com/SanmuganathanLathusan/Yumzy',
     live: null,
-    color: 'from-indigo-600 to-violet-600',
-    icon: <Pizza size={24} />,
+    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800',
     featured: false,
   },
 ]
@@ -114,6 +111,8 @@ function TechTag({ name }) {
     'CSS': 'https://cdn.simpleicons.org/css/1572B6',
     'Next.js': 'https://cdn.simpleicons.org/nextdotjs/000000',
     'JavaScript': 'https://cdn.simpleicons.org/javascript/F7DF1E',
+    'FastAPI': 'https://cdn.simpleicons.org/fastapi/009688',
+    'Gemini API': 'https://cdn.simpleicons.org/google/4285F4',
   }
 
   const iconUrl = techIcons[name]
@@ -135,73 +134,72 @@ function TechTag({ name }) {
 
 function ProjectCard({ project }) {
   return (
-    <div className={`card flex flex-col h-full group ${project.featured ? 'ring-1 ring-primary-600/30' : ''}`}>
-      {project.featured && (
-        <div className="flex items-center gap-1 mb-4">
-          <span className="text-xs font-semibold text-primary-700 dark:text-primary-300 uppercase tracking-wider bg-primary-100 dark:bg-primary-900/40 border border-primary-200 dark:border-primary-800/50 px-2 py-0.5 rounded-full">
-            Featured
-          </span>
-        </div>
-      )}
-
-      <div className="flex items-start gap-3 mb-4">
-        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${project.color} flex items-center justify-center text-white shadow-lg flex-shrink-0`}>
-          {project.icon}
-        </div>
-        <div>
-          <h3 className="text-dark-900 dark:text-white font-bold text-lg group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-            {project.title}
-          </h3>
+    <div className={`card flex flex-col h-full group overflow-hidden ${project.featured ? 'ring-1 ring-teal-600/30' : ''}`}>
+      {/* Project Image Header */}
+      <div className="relative aspect-video overflow-hidden -mx-6 -mt-6 mb-6">
+        <img 
+          src={project.image} 
+          alt={project.title}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+          {project.featured && (
+            <span className="text-[10px] font-bold text-white uppercase tracking-wider bg-teal-600 px-2 py-0.5 rounded-full shadow-lg">
+              Featured
+            </span>
+          )}
         </div>
       </div>
 
-      <p className="text-dark-600 dark:text-dark-300 text-sm leading-relaxed mb-5 flex-1 transition-colors">
+      <div className="flex items-start gap-3 mb-3">
+        <h3 className="text-dark-900 dark:text-white font-bold text-xl group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+          {project.title}
+        </h3>
+      </div>
+
+      <p className="text-dark-600 dark:text-dark-300 text-sm leading-relaxed mb-6 flex-1 transition-colors">
         {project.description}
       </p>
 
-      <div className="flex flex-wrap gap-2 mb-5">
+      <div className="flex flex-wrap gap-2 mb-6">
         {project.tags.map(tag => (
           <TechTag key={tag} name={tag} />
         ))}
       </div>
 
-      <div className="flex items-center gap-3 mt-auto">
+      <div className="flex items-center gap-4 mt-auto pt-4 border-t border-dark-100 dark:border-dark-800/50">
         <a
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white text-sm font-medium transition-colors"
+          className="flex items-center gap-2 text-dark-500 dark:text-dark-400 hover:text-dark-900 dark:hover:text-white text-sm font-medium transition-colors"
         >
           <GitHubIcon />
-          Source
+          <span>Source</span>
         </a>
+        
         {project.live && project.live !== '#' && (
-          <>
-            <span className="text-gray-300 dark:text-dark-700">|</span>
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 text-sm font-medium transition-colors"
-            >
-              <ExternalLinkIcon />
-              Live
-            </a>
-          </>
+          <a
+            href={project.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-dark-500 dark:text-dark-400 hover:text-teal-600 dark:hover:text-teal-400 text-sm font-medium transition-colors"
+          >
+            <ExternalLinkIcon />
+            <span>Live Demo</span>
+          </a>
         )}
+        
         {project.youtube && project.youtube !== '#' && (
-          <>
-            <span className="text-gray-300 dark:text-dark-700">|</span>
-            <a
-              href={project.youtube}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-red-600 dark:hover:text-red-400 text-sm font-medium transition-colors"
-            >
-              <YouTubeIcon />
-              YouTube
-            </a>
-          </>
+          <a
+            href={project.youtube}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-dark-500 dark:text-dark-400 hover:text-red-600 dark:hover:text-red-400 text-sm font-medium transition-colors"
+          >
+            <YouTubeIcon />
+            <span>Video</span>
+          </a>
         )}
       </div>
     </div>
@@ -215,37 +213,42 @@ export default function Projects() {
   return (
     <section id="projects" className="section-padding bg-dark-800/30">
       <div className="section-container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 tag mb-4">Selected Work</div>
           <h2 className="section-title">Featured <span className="gradient-text">Projects</span></h2>
           <p className="section-subtitle max-w-2xl mx-auto">
-            A curated set of applications that demonstrate my engineering process and delivery quality.
+            A showcase of my recent work, ranging from full-stack applications to mobile solutions and AI-powered platforms.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {featured.map(project => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {rest.map(project => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-dark-400 mb-4">Explore additional repositories</p>
-          <a
-            href="https://github.com/SanmuganathanLathusan"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-outline"
-          >
-            <GitHubIcon />
-            View all on GitHub
-          </a>
+        <div className="text-center mt-20">
+          <div className="p-8 rounded-3xl bg-gradient-to-b from-dark-800/50 to-transparent border border-dark-700/50">
+            <p className="text-dark-400 mb-6 text-lg">Want to see more of my code?</p>
+            <a
+              href="https://github.com/SanmuganathanLathusan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline group"
+            >
+              <GitHubIcon />
+              <span>View Full Archive on GitHub</span>
+              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
