@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
-import profileImg from '../assets/image1.png'
+import profileImg from '../assets/profile.png'
+import cvFile from '../assets/Lathusan_CV.pdf'
 
 const roles = [
   'Full Stack Developer',
-  'Software Engineer',
-  
+  'Software Engineer'
+
 ]
 
 function TypewriterText({ texts }) {
@@ -60,7 +61,7 @@ export default function Hero() {
 
             <p className="text-dark-600 dark:text-dark-300 text-lg leading-relaxed max-w-2xl mb-6 transition-colors duration-300">
               I'm
-              <span className="gradient-text">Lathusan</span>
+              <span className="gradient-text"> Lathusan</span>
               , a Software Engineering undergraduate at Sabaragamuwa University. I design and build
               full stack applications with strong attention to performance, maintainability, and user experience.
             </p>
@@ -85,14 +86,24 @@ export default function Hero() {
                 See Projects
               </a>
               <a
+                href={cvFile}
+                download="Sanmuganathan_Lathusan_CV.pdf"
+                className="btn-outline"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Download CV
+              </a>
+              <a
                 href="#contact"
                 onClick={e => { e.preventDefault(); document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' }) }}
-                className="btn-outline"
+                className="btn-outline border-transparent hover:border-teal-600/30"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                Start a Conversation
+                Contact Me
               </a>
             </div>
 
@@ -124,7 +135,7 @@ export default function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="text-dark-400 hover:text-primary-400 transition-colors duration-200"
+                  className="text-dark-400 hover:text-teal-600 transition-colors duration-200"
                 >
                   {social.icon}
                 </a>
@@ -134,18 +145,13 @@ export default function Hero() {
 
           <div className="flex-shrink-0 animate-float">
             <div className="relative w-64 h-64 md:w-80 md:h-80">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-500 to-cyan-500 p-1 glow">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-teal-500 to-cyan-500 p-1 glow">
                 <div className="w-full h-full rounded-full bg-white dark:bg-dark-800 flex items-center justify-center overflow-hidden transition-colors">
                   <img src={profileImg} alt="Lathusan" className="w-full h-full object-cover scale-110" />
                 </div>
               </div>
 
-              <div className="absolute -bottom-4 -left-4 bg-white border border-gray-200 dark:bg-dark-800 dark:border-dark-600 rounded-xl px-3 py-2 shadow-xl transition-colors">
-                <div className="text-dark-900 dark:text-white text-xs font-semibold transition-colors">SUSL</div>
-                <div className="text-dark-500 dark:text-dark-400 text-xs transition-colors">Software Engineering</div>
-              </div>
 
-              
             </div>
           </div>
         </div>
@@ -153,7 +159,7 @@ export default function Hero() {
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-dark-500 text-xs transition-colors">
           <span>Scroll down</span>
           <div className="w-5 h-8 border-2 border-dark-300 dark:border-dark-600 rounded-full flex justify-center pt-1 transition-colors">
-            <div className="w-1 h-2 bg-primary-600 dark:bg-primary-500 rounded-full animate-bounce" />
+            <div className="w-1 h-2 bg-teal-600 dark:bg-teal-500 rounded-full animate-bounce" />
           </div>
         </div>
       </div>
