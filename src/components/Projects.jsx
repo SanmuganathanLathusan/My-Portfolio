@@ -70,7 +70,7 @@ const projects = [
 
 function GitHubIcon() {
   return (
-    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
       <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
     </svg>
   )
@@ -78,7 +78,7 @@ function GitHubIcon() {
 
 function ExternalLinkIcon() {
   return (
-    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
     </svg>
   )
@@ -86,7 +86,7 @@ function ExternalLinkIcon() {
 
 function YouTubeIcon() {
   return (
-    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
       <path d="M23.498 6.186a2.964 2.964 0 00-2.088-2.094C19.57 3.5 12 3.5 12 3.5s-7.57 0-9.41.592A2.964 2.964 0 00.502 6.186 30.78 30.78 0 000 12a30.78 30.78 0 00.502 5.814 2.964 2.964 0 002.088 2.094C4.43 20.5 12 20.5 12 20.5s7.57 0 9.41-.592a2.964 2.964 0 002.088-2.094A30.78 30.78 0 0024 12a30.78 30.78 0 00-.502-5.814zM9.6 15.5v-7l6 3.5-6 3.5z" />
     </svg>
   )
@@ -119,7 +119,7 @@ function TechTag({ name }) {
   const invertInDarkMode = ['Express', 'Express.js', 'Next.js'].includes(name)
 
   return (
-    <span className="tag flex items-center gap-1.5 py-1 px-2.5">
+    <span className="tag flex items-center gap-1.5 py-1 px-3 shadow-sm">
       {iconUrl && (
         <img 
           src={iconUrl} 
@@ -134,45 +134,45 @@ function TechTag({ name }) {
 
 function ProjectCard({ project }) {
   return (
-    <div className={`card flex flex-col h-full group overflow-hidden ${project.featured ? 'ring-1 ring-teal-600/30' : ''}`}>
+    <div className={`card flex flex-col h-full group overflow-hidden ${project.featured ? 'border-primary-500/50 dark:border-cyan-400/40 shadow-[0_10px_30px_rgba(108,99,255,0.15)]' : ''}`}>
       {/* Project Image Header */}
-      <div className="relative aspect-video overflow-hidden -mx-6 -mt-6 mb-6">
+      <div className="relative aspect-video overflow-hidden -mx-8 -mt-8 mb-8 rounded-t-3xl border-b border-gray-200/60 dark:border-white/[0.08]">
         <img 
           src={project.image} 
           alt={project.title}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+        <div className="absolute inset-0 bg-gradient-to-t from-dark-950/90 via-dark-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
           {project.featured && (
-            <span className="text-[10px] font-bold text-white uppercase tracking-wider bg-teal-600 px-2 py-0.5 rounded-full shadow-lg">
+            <span className="text-xs font-bold text-white uppercase tracking-wider bg-gradient-to-r from-primary-600 to-cyan-500 px-4 py-1.5 rounded-full shadow-lg border border-white/20">
               Featured
             </span>
           )}
         </div>
       </div>
 
-      <div className="flex items-start gap-3 mb-3">
-        <h3 className="text-dark-900 dark:text-white font-bold text-xl group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+      <div className="flex items-start gap-3 mb-4">
+        <h3 className="text-dark-900 dark:text-white font-extrabold text-2xl group-hover:text-primary-600 dark:group-hover:text-cyan-400 transition-colors">
           {project.title}
         </h3>
       </div>
 
-      <p className="text-dark-600 dark:text-dark-300 text-sm leading-relaxed mb-6 flex-1 transition-colors">
+      <p className="text-dark-600 dark:text-dark-300 text-base leading-relaxed mb-8 flex-1 transition-colors font-normal">
         {project.description}
       </p>
 
-      <div className="flex flex-wrap gap-2 mb-6">
+      <div className="flex flex-wrap gap-2 mb-8">
         {project.tags.map(tag => (
           <TechTag key={tag} name={tag} />
         ))}
       </div>
 
-      <div className="flex items-center gap-4 mt-auto pt-4 border-t border-dark-100 dark:border-dark-800/50">
+      <div className="flex items-center gap-6 mt-auto pt-6 border-t border-gray-200/60 dark:border-white/[0.08]">
         <a
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-dark-500 dark:text-dark-400 hover:text-dark-900 dark:hover:text-white text-sm font-medium transition-colors"
+          className="flex items-center gap-2 text-dark-500 dark:text-dark-400 hover:text-primary-600 dark:hover:text-cyan-400 text-sm font-semibold transition-colors"
         >
           <GitHubIcon />
           <span>Source</span>
@@ -183,7 +183,7 @@ function ProjectCard({ project }) {
             href={project.live}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-dark-500 dark:text-dark-400 hover:text-teal-600 dark:hover:text-teal-400 text-sm font-medium transition-colors"
+            className="flex items-center gap-2 text-dark-500 dark:text-dark-400 hover:text-primary-600 dark:hover:text-cyan-400 text-sm font-semibold transition-colors"
           >
             <ExternalLinkIcon />
             <span>Live Demo</span>
@@ -195,7 +195,7 @@ function ProjectCard({ project }) {
             href={project.youtube}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-dark-500 dark:text-dark-400 hover:text-red-600 dark:hover:text-red-400 text-sm font-medium transition-colors"
+            className="flex items-center gap-2 text-dark-500 dark:text-dark-400 hover:text-pink-500 dark:hover:text-pink-400 text-sm font-semibold transition-colors"
           >
             <YouTubeIcon />
             <span>Video</span>
@@ -211,12 +211,16 @@ export default function Projects() {
   const rest = projects.filter(p => !p.featured)
 
   return (
-    <section id="projects" className="section-padding bg-dark-800/30">
-      <div className="section-container">
+    <section id="projects" className="section-padding bg-gradient-to-b from-transparent via-dark-850/30 to-transparent relative overflow-hidden">
+      {/* Ambient background glowing orb */}
+      <div className="absolute top-1/3 left-10 w-96 h-96 bg-primary-600/10 rounded-full blur-[120px] pointer-events-none animate-float" />
+      <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-pink-500/10 rounded-full blur-[120px] pointer-events-none animate-float-delayed" />
+
+      <div className="section-container relative z-10">
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 tag mb-4">Selected Work</div>
           <h2 className="section-title">Featured <span className="gradient-text">Projects</span></h2>
-          <p className="section-subtitle max-w-2xl mx-auto">
+          <p className="section-subtitle max-w-2xl mx-auto font-normal">
             A showcase of my recent work, ranging from full-stack applications to mobile solutions and AI-powered platforms.
           </p>
         </div>
@@ -234,17 +238,17 @@ export default function Projects() {
         </div>
 
         <div className="text-center mt-20">
-          <div className="p-8 rounded-3xl bg-gradient-to-b from-dark-800/50 to-transparent border border-dark-700/50">
-            <p className="text-dark-400 mb-6 text-lg">Want to see more of my code?</p>
+          <div className="p-12 rounded-3xl bg-white/40 dark:bg-dark-850/40 border border-gray-200/60 dark:border-white/[0.08] backdrop-blur-xl shadow-2xl max-w-3xl mx-auto">
+            <p className="text-dark-600 dark:text-dark-300 mb-8 text-lg font-normal">Want to see more of my code?</p>
             <a
               href="https://github.com/SanmuganathanLathusan"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline group"
+              className="btn-outline group inline-flex items-center gap-3"
             >
               <GitHubIcon />
               <span>View Full Archive on GitHub</span>
-              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
