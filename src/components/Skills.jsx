@@ -4,7 +4,7 @@ const skillCategories = [
   {
     title: 'Frontend',
     icon: <LayoutDashboard className="text-white" size={24} />,
-    color: 'from-blue-500 to-cyan-500',
+    color: 'from-primary-500 to-cyan-500',
     skills: [
       { name: 'React.js', level: 85 },
       { name: 'JavaScript ', level: 88 },
@@ -17,7 +17,7 @@ const skillCategories = [
   {
     title: 'Backend',
     icon: <Server className="text-white" size={24} />,
-    color: 'from-emerald-500 to-teal-500',
+    color: 'from-cyan-500 to-teal-500',
     skills: [
       { name: 'Node.js', level: 80 },
       { name: 'Express.js', level: 78 },
@@ -44,7 +44,7 @@ const skillCategories = [
   {
     title: 'Languages',
     icon: <Code2 className="text-white" size={24} />,
-    color: 'from-orange-500 to-yellow-500',
+    color: 'from-pink-500 to-orange-500',
     skills: [
       { name: 'Python', level: 85 },
       { name: 'Java', level: 80 },
@@ -66,14 +66,14 @@ const techBadges = [
 
 function SkillBar({ name, level }) {
   return (
-    <div className="mb-4">
-      <div className="flex justify-between mb-1">
-        <span className="text-dark-700 dark:text-dark-200 text-sm font-medium transition-colors">{name}</span>       
-        <span className="text-dark-500 dark:text-dark-400 text-sm transition-colors">{level}%</span>
+    <div className="mb-5 group/bar">
+      <div className="flex justify-between mb-1.5">
+        <span className="text-dark-700 dark:text-dark-200 text-sm font-semibold group-hover/bar:text-primary-600 dark:group-hover/bar:text-cyan-400 transition-colors">{name}</span>       
+        <span className="text-dark-500 dark:text-dark-400 text-sm font-medium transition-colors">{level}%</span>
       </div>
-      <div className="h-2 bg-gray-200 dark:bg-dark-700 rounded-full overflow-hidden transition-colors">
+      <div className="h-2.5 bg-gray-200/80 dark:bg-dark-800 rounded-full overflow-hidden p-0.5 border border-gray-300/50 dark:border-white/[0.05] backdrop-blur-sm">
         <div
-          className="h-full bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full transition-all duration-1000"
+          className="h-full bg-gradient-to-r from-primary-500 via-cyan-400 to-primary-600 rounded-full transition-all duration-1000 shadow-[0_0_12px_rgba(0,212,255,0.5)]"
           style={{ width: `${level}%` }}
         />
       </div>
@@ -83,25 +83,28 @@ function SkillBar({ name, level }) {
 
 export default function Skills() {
   return (
-    <section id="skills" className="section-padding">
-      <div className="section-container">
+    <section id="skills" className="section-padding bg-gradient-to-b from-transparent via-dark-850/20 to-transparent relative overflow-hidden">
+      {/* Ambient background glowing orb */}
+      <div className="absolute top-1/2 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none animate-float-delayed" />
+
+      <div className="section-container relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 tag mb-4">My Skills</div>
           <h2 className="section-title">Technical <span className="gradient-text">Expertise</span></h2>
-          <p className="section-subtitle max-w-2xl mx-auto">
+          <p className="section-subtitle max-w-2xl mx-auto font-normal">
             Technologies I've worked with throughout my studies and personal projects.
           </p>
         </div>
 
         {/* Skill categories */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {skillCategories.map(cat => (
-            <div key={cat.title} className="card">
-              <div className={`w-10 h-10 rounded-xl bg-gradient-to-r ${cat.color} flex items-center justify-center text-xl mb-4`}>
+            <div key={cat.title} className="card group/card hover:border-primary-500/40 dark:hover:border-cyan-400/30 transition-all duration-500 hover:shadow-[0_15px_35px_rgba(108,99,255,0.2)]">
+              <div className={`w-12 h-12 rounded-2xl bg-gradient-to-r ${cat.color} flex items-center justify-center text-xl mb-6 shadow-lg group-hover/card:scale-110 transition-transform duration-300`}>
                 {cat.icon}
               </div>
-              <h3 className="text-dark-900 dark:text-white font-bold text-lg mb-6 transition-colors">{cat.title}</h3>
+              <h3 className="text-dark-900 dark:text-white font-extrabold text-xl mb-8 group-hover/card:text-primary-600 dark:group-hover/card:text-cyan-400 transition-colors">{cat.title}</h3>
               {cat.skills.map(skill => (
                 <SkillBar key={skill.name} {...skill} />
               ))}
@@ -110,11 +113,11 @@ export default function Skills() {
         </div>
 
         {/* Tech badges */}
-        <div className="text-center">
-          <p className="text-dark-400 text-sm mb-6 uppercase tracking-widest">Technologies I work with</p>
+        <div className="text-center max-w-4xl mx-auto p-8 rounded-3xl bg-white/40 dark:bg-dark-850/40 border border-gray-200/60 dark:border-white/[0.08] backdrop-blur-xl shadow-xl">
+          <p className="text-dark-500 dark:text-dark-400 text-xs font-bold mb-8 uppercase tracking-[0.25em]">Technologies I work with</p>
           <div className="flex flex-wrap justify-center gap-3">
             {techBadges.map(tech => (
-              <span key={tech} className="skill-badge">{tech}</span>
+              <span key={tech} className="skill-badge hover:scale-110 transition-all duration-300 shadow-sm">{tech}</span>
             ))}
           </div>
         </div>
