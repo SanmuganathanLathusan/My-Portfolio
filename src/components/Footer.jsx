@@ -21,7 +21,7 @@ const socials = [
     href: 'https://www.linkedin.com/in/lathusan-lathusan-90b89b372/',
     icon: (
       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.22 0h.003z" />
       </svg>
     )
   },
@@ -44,30 +44,33 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-gray-50 border-t border-gray-200 dark:bg-dark-900 dark:border-dark-800 transition-colors duration-300">
-      <div className="section-container py-12">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+    <footer className="bg-white/40 dark:bg-[#0b0f19]/80 border-t border-gray-200/60 dark:border-white/[0.08] backdrop-blur-xl transition-all duration-500 relative overflow-hidden z-10">
+      {/* Background glow accent */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-32 bg-gradient-to-r from-primary-600/10 via-cyan-500/10 to-pink-500/10 blur-3xl pointer-events-none" />
+
+      <div className="section-container py-16 relative z-10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-10 mb-12">
 
           {/* Brand */}
-          <div className="text-center md:text-left">
-            <div className="text-2xl font-bold mb-1">
-              <span className="gradient-text">LA</span>
-              <span className="text-dark-600 dark:text-dark-400 font-mono text-sm ml-1 transition-colors">.dev</span>
+          <div className="text-center md:text-left group">
+            <div className="text-3xl font-extrabold mb-2 tracking-tight">
+              <span className="gradient-text">Lathusan</span>
+              <span className="text-primary-600 dark:text-cyan-400 font-mono text-xs uppercase tracking-[0.3em] ml-2 pb-0.5 inline-block font-semibold">Portfolio</span>
             </div>
-            <p className="text-dark-500 dark:text-dark-400 text-sm max-w-xs transition-colors">
-              Software Engineering Undergraduate · SUSL · Seeking Internships
+            <p className="text-dark-600 dark:text-dark-300 text-sm max-w-sm transition-colors font-medium leading-relaxed">
+              Software Engineering Undergraduate · Sabaragamuwa University of Sri Lanka · Actively seeking Internship opportunities
             </p>
           </div>
 
           {/* Nav links */}
           <nav>
-            <ul className="flex flex-wrap justify-center gap-6">
+            <ul className="flex flex-wrap justify-center gap-8 bg-gray-100/80 dark:bg-dark-850/60 p-3 px-6 rounded-2xl border border-gray-200/60 dark:border-white/[0.08] backdrop-blur-md shadow-sm">
               {footerLinks.map(link => (
                 <li key={link.href}>
                   <a
                     href={link.href}
                     onClick={e => handleNavClick(e, link.href)}
-                    className="text-dark-600 hover:text-dark-900 dark:text-dark-400 dark:hover:text-white text-sm transition-colors"
+                    className="text-dark-600 hover:text-primary-600 dark:text-dark-300 dark:hover:text-cyan-400 text-sm font-semibold transition-colors"
                   >
                     {link.label}
                   </a>
@@ -85,8 +88,8 @@ export default function Footer() {
                 target={s.href.startsWith('mailto') ? undefined : '_blank'}
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="w-9 h-9 rounded-lg bg-gray-100 border border-gray-200 dark:bg-dark-800 dark:border-dark-700 flex items-center justify-center
-                           text-dark-600 hover:text-primary-600 dark:text-dark-400 dark:hover:text-primary-400 hover:border-primary-500/50 transition-all duration-200"
+                className="w-12 h-12 rounded-2xl bg-gray-100 dark:bg-dark-850 border border-gray-200 dark:border-white/[0.08] flex items-center justify-center
+                           text-dark-600 hover:text-primary-600 dark:text-dark-300 dark:hover:text-cyan-400 hover:border-primary-500/50 transition-all duration-300 hover:scale-110 shadow-sm"
               >
                 {s.icon}
               </a>
@@ -94,15 +97,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Divider + copyright */}
-        <div className="border-t border-gray-200 dark:border-dark-800 mt-8 pt-8 text-center transition-colors">
-          <p className="text-dark-500 text-sm">
-            © {new Date().getFullYear()} Lathusan. Built with{' '}
-            <span className="text-primary-600 dark:text-primary-400 font-medium">React</span>,{' '}
-            <span className="text-primary-600 dark:text-primary-400 font-medium">Vite</span> &amp;{' '}
-            <span className="text-primary-600 dark:text-primary-400 font-medium">Tailwind CSS</span>.
-          </p>
-        </div>
+        
       </div>
     </footer>
   )
