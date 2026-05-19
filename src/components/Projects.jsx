@@ -152,12 +152,12 @@ function ProjectCard({ project }) {
       </div>
 
       <div className="flex items-start gap-3 mb-4">
-        <h3 className="text-dark-900 dark:text-white font-extrabold text-2xl group-hover:text-primary-600 dark:group-hover:text-cyan-400 transition-colors">
+        <h3 className="text-dark-900 dark:text-white font-extrabold text-xl group-hover:text-primary-600 dark:group-hover:text-cyan-400 transition-colors">
           {project.title}
         </h3>
       </div>
 
-      <p className="text-dark-600 dark:text-dark-300 text-base leading-relaxed mb-8 flex-1 transition-colors font-normal">
+      <p className="text-dark-600 dark:text-dark-300 text-sm leading-relaxed mb-8 flex-1 transition-colors font-normal">
         {project.description}
       </p>
 
@@ -239,7 +239,7 @@ export default function Projects() {
 
         <div className="text-center mt-20">
           <div className="p-12 rounded-3xl bg-white/40 dark:bg-dark-850/40 border border-gray-200/60 dark:border-white/[0.08] backdrop-blur-xl shadow-2xl max-w-3xl mx-auto">
-            <p className="text-dark-600 dark:text-dark-300 mb-8 text-lg font-normal">Want to see more of my code?</p>
+            <p className="text-dark-600 dark:text-dark-300 mb-8 text-base font-normal">Want to see more of my code?</p>
             <a
               href="https://github.com/SanmuganathanLathusan"
               target="_blank"
