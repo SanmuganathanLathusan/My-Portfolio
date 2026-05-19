@@ -104,7 +104,7 @@ export default function Skills() {
               <div className={`w-12 h-12 rounded-2xl bg-gradient-to-r ${cat.color} flex items-center justify-center text-xl mb-6 shadow-lg group-hover/card:scale-110 transition-transform duration-300`}>
                 {cat.icon}
               </div>
-              <h3 className="text-dark-900 dark:text-white font-extrabold text-xl mb-8 group-hover/card:text-primary-600 dark:group-hover/card:text-cyan-400 transition-colors">{cat.title}</h3>
+              <h3 className="text-dark-900 dark:text-white font-extrabold text-lg mb-8 group-hover/card:text-primary-600 dark:group-hover/card:text-cyan-400 transition-colors">{cat.title}</h3>
               {cat.skills.map(skill => (
                 <SkillBar key={skill.name} {...skill} />
               ))}
