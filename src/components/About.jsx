@@ -34,11 +34,11 @@ export default function About() {
               Software Engineering Student with
               <span className="gradient-text"> Full Stack Focus</span>
             </h2>
-            <p className="text-dark-600 dark:text-dark-300 text-base md:text-lg leading-relaxed mb-6 transition-colors duration-300 font-normal">
+            <p className="text-dark-600 dark:text-dark-300 text-sm md:text-base leading-relaxed mb-6 transition-colors duration-300 font-normal">
               I am a third-year Software Engineering undergraduate at Sabaragamuwa University of Sri Lanka.
               My work centers on building dependable web applications from frontend interface design to backend API development.
             </p>
-            <p className="text-dark-600 dark:text-dark-300 text-base md:text-lg leading-relaxed mb-10 transition-colors duration-300 font-normal">
+            <p className="text-dark-600 dark:text-dark-300 text-sm md:text-base leading-relaxed mb-10 transition-colors duration-300 font-normal">
               I have hands-on experience with React, Node.js, Express, MongoDB, and MySQL, with strong programming fundamentals
               in Python, Java, and C. I am actively seeking Software Engineering and Full Stack internship opportunities.
             </p>
@@ -78,8 +78,8 @@ export default function About() {
             {highlights.map(item => (
               <div key={item.title} className="card group/card hover:border-primary-500/40 dark:hover:border-cyan-400/30 transition-all duration-500">
                 <div className="w-12 h-1 bg-gradient-to-r from-primary-500 to-cyan-400 rounded-full mb-4 group-hover/card:w-20 transition-all duration-500" />
-                <h3 className="text-dark-900 dark:text-white font-extrabold text-xl mb-3 group-hover/card:text-primary-600 dark:group-hover/card:text-cyan-400 transition-colors">{item.title}</h3>
-                <p className="text-dark-600 dark:text-dark-300 text-base leading-relaxed font-normal">{item.text}</p>
+                <h3 className="text-dark-900 dark:text-white font-extrabold text-lg mb-3 group-hover/card:text-primary-600 dark:group-hover/card:text-cyan-400 transition-colors">{item.title}</h3>
+                <p className="text-dark-600 dark:text-dark-300 text-sm leading-relaxed font-normal">{item.text}</p>
               </div>
             ))}
           </div>
@@ -88,8 +88,8 @@ export default function About() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 mt-16">
           {stats.map(stat => (
             <div key={stat.label} className="card text-center transition-all duration-500 hover:scale-105 group/stat hover:border-primary-500/40 dark:hover:border-cyan-400/30">
-              <div className="text-4xl md:text-5xl font-extrabold gradient-text mb-2 group-hover/stat:scale-110 transition-transform duration-300 inline-block">{stat.value}</div>
-              <div className="text-dark-600 dark:text-dark-300 text-sm md:text-base font-medium transition-colors">{stat.label}</div>
+              <div className="text-3xl md:text-4xl font-extrabold gradient-text mb-2 group-hover/stat:scale-110 transition-transform duration-300 inline-block">{stat.value}</div>
+              <div className="text-dark-600 dark:text-dark-300 text-xs md:text-sm font-medium transition-colors">{stat.label}</div>
             </div>
           ))}
         </div>
