@@ -51,27 +51,28 @@ export default function Hero() {
       <div className="absolute bottom-1/4 left-1/4 w-[25rem] h-[25rem] bg-cyan-500/15 dark:bg-cyan-400/20 rounded-full blur-[100px] pointer-events-none animate-float" style={{ animationDelay: '1.5s' }} />
       <div className="absolute top-1/2 left-1/3 w-[20rem] h-[20rem] bg-pink-500/10 dark:bg-pink-500/15 rounded-full blur-[90px] pointer-events-none animate-float-delayed" />
 
-      <div className="section-container w-full py-32 pt-24 relative z-10">
+      <div className="section-container w-full pb-32 pt-40 md:pt-40 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
 
           <div className="flex-1 animate-slide-up">
             {/* Status Badge */}
             
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-dark-900 dark:text-white leading-[1.1] mb-6 transition-colors duration-300 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-extrabold text-dark-900 dark:text-white leading-[1.1] mb-6 transition-colors duration-300 tracking-tight">
               Transforming complex ideas
               <br />
               into <span className="gradient-text">seamless web experiences</span>
             </h1>
 
-            <p className="text-dark-600 dark:text-dark-100 text-lg md:text-xl leading-relaxed max-w-2xl mb-8 transition-colors duration-300 font-normal">
+            <p className="text-dark-600 dark:text-dark-100 text-base md:text-lg leading-relaxed max-w-2xl mb-8 transition-colors duration-300 font-normal">
               I'm
               <span className="gradient-text font-bold"> Lathusan</span>
-              , a Software Engineering undergraduate at Sabaragamuwa University. I design and build
-              full stack applications with strong attention to performance, maintainability, and user experience.
+              , a Software Engineering undergraduate at Sabaragamuwa University. 
+              I design and buildfull stack applications with strong attention to
+              performance, maintainability, and user experience.
             </p>
 
-            <div className="text-xl sm:text-2xl md:text-3xl font-bold text-dark-700 dark:text-white mb-8 h-10 transition-colors duration-300 flex items-center gap-3">
+            <div className="text-lg sm:text-xl md:text-2xl font-bold text-dark-700 dark:text-white mb-8 h-10 transition-colors duration-300 flex items-center gap-3">
               <span className="w-8 h-1 bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full" />
               <TypewriterText texts={roles} />
             </div>
