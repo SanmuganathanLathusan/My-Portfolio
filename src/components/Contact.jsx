@@ -91,8 +91,8 @@ export default function Contact() {
           {/* Left info cards */}
           <div className="lg:col-span-2 space-y-8">
             <div className="card group hover:border-primary-500/40 dark:hover:border-cyan-400/30 transition-all duration-500 shadow-xl">
-              <h3 className="text-dark-900 dark:text-white font-extrabold text-2xl mb-4 transition-colors">Get in Touch</h3>
-              <p className="text-dark-600 dark:text-dark-300 text-base leading-relaxed mb-8 transition-colors font-normal">
+              <h3 className="text-dark-900 dark:text-white font-extrabold text-xl mb-4 transition-colors">Get in Touch</h3>
+              <p className="text-dark-600 dark:text-dark-300 text-sm leading-relaxed mb-8 transition-colors font-normal">
                 Whether you have a project in mind, an internship opportunity, or just want to say hi, feel free to reach out!
               </p>
 
@@ -109,12 +109,12 @@ export default function Contact() {
                           href={info.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-dark-900 dark:text-white text-base font-extrabold hover:text-primary-600 dark:hover:text-cyan-400 transition-colors"
+                          className="text-dark-900 dark:text-white text-sm font-extrabold hover:text-primary-600 dark:hover:text-cyan-400 transition-colors"
                         >
                           {info.value}
                         </a>
                       ) : (
-                        <p className="text-dark-900 dark:text-white text-base font-extrabold transition-colors">{info.value}</p>
+                        <p className="text-dark-900 dark:text-white text-sm font-extrabold transition-colors">{info.value}</p>
                       )}
                     </div>
                   </div>
@@ -124,14 +124,14 @@ export default function Contact() {
 
             {/* Quick Connect Prompt */}
             <div className="p-8 rounded-3xl bg-gradient-to-r from-primary-600/10 to-cyan-500/10 border border-primary-500/20 dark:border-cyan-500/20 backdrop-blur-xl shadow-lg">
-              <h4 className="text-dark-900 dark:text-white font-extrabold text-lg mb-2">Fast Response Guaranteed</h4>
+              <h4 className="text-dark-900 dark:text-white font-extrabold text-base mb-2">Fast Response Guaranteed</h4>
               <p className="text-dark-600 dark:text-dark-300 text-sm leading-relaxed font-normal">I actively monitor my email and WhatsApp messages. You can expect a reply within 24 hours.</p>
             </div>
           </div>
 
           {/* Right form */}
           <div className="lg:col-span-3 card hover:border-primary-500/40 dark:hover:border-cyan-400/30 transition-all duration-500 shadow-xl">
-            <h3 className="text-dark-900 dark:text-white font-extrabold text-2xl mb-8 transition-colors">Send Me a Message</h3>
+            <h3 className="text-dark-900 dark:text-white font-extrabold text-xl mb-8 transition-colors">Send Me a Message</h3>
 
             {status === 'success' && (
               <div className="mb-8 p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-4 text-emerald-600 dark:text-emerald-400 animate-slide-up shadow-sm backdrop-blur-md">
